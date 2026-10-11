@@ -4,7 +4,8 @@ export const metadata = {
   title: 'артблять — квиз и экзамен по искусству',
   description: 'Изучай коллекцию, выбирай ответы в квизе и вспоминай автора и название на экзамене.',
   manifest: '/manifest.webmanifest',
-  icons: { icon: '/icon.svg' },
+  icons: { icon: '/icon.svg', apple: '/icon-192.png' },
+  appleWebApp: { capable: true, title: 'артблять', statusBarStyle: 'default' },
 };
 export const viewport = {
   width: 'device-width',

@@ -15,3 +15,16 @@ test('Legacy backups preserve progress without claiming exam mastery', () => {
   assert.deepEqual(data.quizProgress, backup.progress);
   assert.throws(() => parseBackup({ ...backup, progress: { 1: { attempts: -1 } } }, ids));
 });
+test('Blind exam resumes its remaining questions and rejects invalid timer state', () => {
+  const exam = { mode: 'exam', blind: true, startedAt: 1000, deadline: 10000, queue: [1, 2], snapshot: { index: 1, answer: null, results: [{ id: 1, correct: false }], written: { author: 'Автор', title: 'Название' }, optionIds: [] } };
+  assert.equal(validSession(exam, ids), true);
+  assert.equal(validSession({ ...exam, deadline: 'tomorrow' }, ids), false);
+  assert.equal(validSession({ ...exam, snapshot: { ...exam.snapshot, answer: { id: 2, correct: false } } }, ids), false);
+});
+test('History and error analysis round-trip in backups, malformed history is rejected', () => {
+  const backup = { schema: 'art-memory', version: 1, progress: {}, activity: {}, history: [{ runId: 'run-1', date: 100, mode: 'exam', total: 1, correct: 0, seconds: 30, results: [{ id: 1, correct: false, written: { author: '', title: '' } }] }], errors: { 1: { author: 0, title: 0, skipped: 1, confusedWith: {} } } };
+  assert.deepEqual(parseBackup(backup, ids).history, backup.history);
+  assert.deepEqual(parseBackup(backup, ids).errors, backup.errors);
+  assert.throws(() => parseBackup({ ...backup, history: [{ ...backup.history[0], correct: 2 }] }, ids));
+  assert.throws(() => parseBackup({ ...backup, errors: { 1: { author: -1 } } }, ids));
+});

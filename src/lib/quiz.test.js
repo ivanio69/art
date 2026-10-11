@@ -9,3 +9,9 @@ test('Quiz offers four distinct answers with exactly one correct painting', () =
   assert.equal(options.filter(p => p.id === painting.id).length, 1);
   assert.equal(new Set(options.map(p => p.title + p.author)).size, 4);
 });
+test('Previously confused paintings are included among distractors', () => {
+  const paintings = Array.from({ length: 10 }, (_, i) => ({ id: i + 1, title: `Work ${i}`, author: 'Author' }));
+  const options = makeOptions(paintings[0], paintings, () => 0.5, [10]);
+  assert.equal(options.some(p => p.id === 10), true);
+  assert.equal(options.length, 4);
+});
