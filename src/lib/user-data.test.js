@@ -45,3 +45,15 @@ test('Shuffled learning order and unconfirmed quiz selections survive backups', 
   const backup = { schema: 'art-memory', version: 1, progress: {}, activity: {}, savedSession: quiz };
   assert.deepEqual(parseBackup(backup, ids).savedSession, quiz);
 });
+test('Quiz fields survive backups and legacy sessions keep combined cards', () => {
+  const backup = { schema: 'art-memory', version: 1, progress: {}, activity: {} };
+  assert.equal(parseBackup(backup, ids).settings.quizField, 'both');
+  for (const field of ['both', 'author', 'title']) {
+    const session = { ...saved, quizField: field };
+    const data = parseBackup({ ...backup, settings: { quizField: field }, savedSession: session }, ids);
+    assert.equal(data.settings.quizField, field);
+    assert.equal(data.savedSession.quizField, field);
+  }
+  assert.equal(validSession({ ...saved, quizField: 'bad' }, ids), false);
+  assert.throws(() => parseBackup({ ...backup, settings: { quizField: 'bad' } }, ids));
+});
