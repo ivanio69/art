@@ -1,17 +1,20 @@
 export const defaultSettings = { count: 10, dailyGoal: 10, tolerance: 'normal', filter: 'all', examMinutes: 0 };
 const record = value => Boolean(value && typeof value === 'object' && !Array.isArray(value));
-const validResult = (r, ids) => record(r) && ids.has(r.id) && typeof r.correct === 'boolean' && (!r.written || record(r.written) && ['author', 'title'].every(k => typeof r.written[k] === 'string' && r.written[k].length <= 180)) && ((!r.author && !r.title) || record(r.author) && typeof r.author.accepted === 'boolean' && record(r.title) && typeof r.title.accepted === 'boolean') && (!r.selectedId || ids.has(r.selectedId));
+const validWritten = w => record(w) && ['author', 'title'].every(k => typeof w[k] === 'string' && w[k].length <= 180);
+const validResult = (r, ids) => record(r) && ids.has(r.id) && typeof r.correct === 'boolean' && (r.manual === undefined || typeof r.manual === 'boolean' && (!r.manual || r.correct)) && (!r.written || validWritten(r.written)) && ((!r.author && !r.title) || record(r.author) && typeof r.author.accepted === 'boolean' && record(r.title) && typeof r.title.accepted === 'boolean') && (!r.selectedId || ids.has(r.selectedId)) && (!r.before || record(r.before) && ['overall', 'exam'].every(k => r.before[k] === null || validProgress({ [r.id]: r.before[k] })) && Number.isFinite(r.reviewedAt) && r.reviewedAt >= 0 && /^\d{4}-\d{2}-\d{2}$/.test(r.reviewedDay));
 function validProgress(value) {
   return record(value) && Object.entries(value).every(([id, p]) => /^\d+$/.test(id) && record(p) && ['attempts', 'correct', 'errors', 'streak', 'due', 'last'].every(k => Number.isFinite(p[k]) && p[k] >= 0) && p.correct <= p.attempts);
 }
 export function validSession(session, ids) {
-  if (!record(session) || !['quiz', 'exam'].includes(session.mode) || !Array.isArray(session.queue) || !session.queue.length || session.queue.length > 1000 || !session.queue.every(id => ids.has(id)) || new Set(session.queue).size !== session.queue.length) return false;
+  if (!record(session) || !['quiz', 'exam', 'learn'].includes(session.mode) || !Array.isArray(session.queue) || !session.queue.length || session.queue.length > 1000 || !session.queue.every(id => ids.has(id)) || new Set(session.queue).size !== session.queue.length) return false;
   const s = session.snapshot;
   if (session.blind !== undefined && typeof session.blind !== 'boolean' || session.deadline != null && (!Number.isFinite(session.deadline) || session.deadline < 0) || session.startedAt != null && (!Number.isFinite(session.startedAt) || session.startedAt < 0)) return false;
   if (session.blind && (session.mode !== 'exam' || s?.answer)) return false;
-  if (!record(s) || !Number.isInteger(s.index) || s.index < 0 || s.index >= session.queue.length || !Array.isArray(s.results)) return false;
+  if (!record(s) || !Number.isInteger(s.index) || s.index < 0 || s.index >= session.queue.length) return false;
+  if (session.mode === 'learn') return ['study', 'recall', 'feedback'].includes(s.phase) && validWritten(s.written) && !session.deadline;
+  if (!Array.isArray(s.results)) return false;
   if (s.results.length !== s.index + Number(Boolean(s.answer)) || !s.results.every((r, i) => validResult(r, ids) && r.id === session.queue[i])) return false;
-  if (s.answer && (!record(s.answer) || s.answer.id !== session.queue[s.index] || typeof s.answer.correct !== 'boolean' || s.answer.correct !== s.results.at(-1).correct)) return false;
+  if (s.answer && (!validResult(s.answer, ids) || s.answer.id !== session.queue[s.index] || s.answer.correct !== s.results.at(-1).correct)) return false;
   if (s.answer?.title && (!record(s.answer.title) || typeof s.answer.title.accepted !== 'boolean' || !record(s.answer.author) || typeof s.answer.author.accepted !== 'boolean')) return false;
   if (!record(s.written) || !['author', 'title'].every(k => typeof s.written[k] === 'string' && s.written[k].length <= 180)) return false;
   return session.mode === 'exam' || (Array.isArray(s.optionIds) && s.optionIds.length === 4 && new Set(s.optionIds).size === 4 && s.optionIds.includes(session.queue[s.index]) && s.optionIds.every(id => ids.has(id)) && (!s.answer || s.optionIds.includes(s.answer.selectedId)));

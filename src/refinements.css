@@ -48,3 +48,4 @@
 @media(max-width:700px){.landing-art{grid-column:auto;grid-row:auto}.comparison-grid .painting-image{height:220px}.history-page{padding-top:0}.quiz-result h1{font-size:36px}}
 .simple-home{overflow-x:clip}
 @media(max-width:360px){.simple-header{padding:0 16px}.simple-header .brand-icon{display:none}.simple-header .brand{font-size:18px}.header-actions{gap:7px}.header-link{font-size:12px}.simple-header .icon-button{width:28px}.hero-actions{flex-wrap:wrap}}
+.learning-answer{align-self:center;display:grid;gap:18px;animation:appear .3s ease}.learning-answer h2{font:32px/1.25 Georgia,serif;overflow-wrap:anywhere}.learning-answer p{margin:0}.learning-answer .exam-feedback{margin:0}.manual-correction{margin-top:12px;font-size:12px;display:block;color:#526941;text-decoration:underline;text-underline-offset:3px}.learning-answer .button-row{flex-wrap:wrap}

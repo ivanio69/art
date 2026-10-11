@@ -28,3 +28,9 @@ test('History and error analysis round-trip in backups, malformed history is rej
   assert.throws(() => parseBackup({ ...backup, history: [{ ...backup.history[0], correct: 2 }] }, ids));
   assert.throws(() => parseBackup({ ...backup, errors: { 1: { author: -1 } } }, ids));
 });
+test('Learning sessions preserve phase and draft without implying an exam result', () => {
+  const saved = {mode:'learn',queue:[1,2],snapshot:{index:1,phase:'recall',written:{author:'Автор',title:''}}};
+  assert.equal(validSession(saved,ids),true);
+  assert.equal(validSession({...saved,snapshot:{...saved.snapshot,phase:'invalid'}},ids),false);
+  assert.equal(validSession({...saved,deadline:100},ids),false);
+});

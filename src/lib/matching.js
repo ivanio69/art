@@ -2,6 +2,12 @@ export function normalize(value) {
   return String(value ?? '').normalize('NFKC').toLocaleLowerCase('ru').replace(/ё/g, 'е').replace(/[іІ]/g, 'i').replace(/[^\p{L}\p{N}\s]/gu, ' ').replace(/\s+/g, ' ').trim().replace(/\b(?:i|ii|iii|iv|v|vi|vii|viii|ix|x)\b/g, value => ({i:'1',ii:'2',iii:'3',iv:'4',v:'5',vi:'6',vii:'7',viii:'8',ix:'9',x:'10'}[value]));
 }
 
+export function answerCatalog(paintings) {
+  const authors = paintings.flatMap(p => [p.author, ...(p.authorAliases || [])]).filter(Boolean).flatMap(author => [author, normalize(author).split(' ').filter(word => word.length > 1 && !['старший', 'младший', 'др'].includes(word)).at(-1)]);
+  const titles = paintings.flatMap(p => [p.title, ...(p.titleAliases || [])]).filter(Boolean);
+  return { authors, titles };
+}
+
 // Optimal string alignment distance accepts missing letters and adjacent swaps.
 export function distance(a, b) {
   const matrix = Array.from({ length: a.length + 1 }, () => Array(b.length + 1).fill(0));

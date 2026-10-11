@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import imageStats from '../lib/image-stats.json';
 
 export default function Offline({ images }) {
   const [status, setStatus] = useState('');
@@ -29,5 +30,5 @@ export default function Offline({ images }) {
       setStatus('Готово. Эта коллекция доступна без сети.');
     } catch (error) { setStatus(error.message); } finally { setBusy(false); }
   }
-  return <div className="offline-settings"><button className="text-button" disabled={busy} onClick={saveOffline}>{busy ? 'Сохраняю…' : 'Сохранить коллекцию офлайн · ~25 МБ'}</button>{install ? <button className="text-button" onClick={async () => { await install.prompt(); setInstall(null); }}>Установить на телефон</button> : <small>На телефоне: меню браузера → «На экран Домой».</small>}{status && <small role="status">{status}</small>}</div>;
+  return <div className="offline-settings"><button className="text-button" disabled={busy} onClick={saveOffline}>{busy ? 'Сохраняю…' : `Сохранить коллекцию офлайн · ~${Math.ceil(imageStats.totalBytes / 1048576)} МБ`}</button>{install ? <button className="text-button" onClick={async () => { await install.prompt(); setInstall(null); }}>Установить на телефон</button> : <small>На телефоне: меню браузера → «На экран Домой».</small>}{status && <small role="status">{status}</small>}</div>;
 }
