@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { review, makeQueue, ready } from './learning.js';
+const time = 1800000000000;
+test('Schedule grows across correct answers and resets on mistakes and hints', () => { let p = review({}, true, false, time); assert.equal(p.due, time + 86400000); p = review(p, true, false, time); assert.equal(p.due, time + 3 * 86400000); p = review(p, true, false, time); assert.equal(p.streak, 3); assert.equal(p.due, time + 7 * 86400000); p = review(p, true, true, time); assert.equal(p.streak, 0); assert.equal(p.correct, 3); assert.equal(p.due, time + 600000); });
+test('Queue excludes unavailable images and unknown authors can be intentionally omitted', () => { assert.ok(ready({ id: 1, image: '1.jpg', title: 'Замок', author: '', authorRequired: false })); const paintings = [{ id: 1, image: '1.jpg', author: 'A', title: 'T' }, { id: 2, image: null, author: 'B', title: 'Q' }, { id: 3, image: '3.jpg', author: '', title: '' }]; assert.deepEqual(makeQueue(paintings, {}, 'smart', 10, time), [1]); });
+test('Mistake queue excludes already mastered work', () => { const paintings = [1, 2, 3].map(id => ({ id, image: `${id}.jpg`, author: 'A', title: 'T' })); assert.deepEqual(makeQueue(paintings, { 1: { errors: 1, streak: 0 }, 2: { errors: 1, streak: 3 } }, 'mistakes', 10, time), [1]); });
+test('Smart queue respects the next review time', () => { const paintings = [1, 2].map(id => ({ id, image: `${id}.jpg`, author: 'A', title: 'T' })); const progress = { 1: review({}, true, false, time) }; assert.deepEqual(makeQueue(paintings, progress, 'smart', 10, time), [2]); assert.equal(makeQueue(paintings, progress, 'all', 10, time).length, 2); });

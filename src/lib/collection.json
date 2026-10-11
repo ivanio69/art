@@ -1,0 +1,2256 @@
+[
+  {
+    "id": 1,
+    "author": "",
+    "title": "Наскальное изображение бизона в пещере Альтамира",
+    "authorAliases": [],
+    "titleAliases": [
+      "Бизон в пещере Альтамира",
+      "Бизон Альтамира",
+      "Альтамира"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "1. Наскальное изображение бизона в пещере Альтамира /Испания/. Палсолит.",
+    "image": "paintings/1.jpg"
+  },
+  {
+    "id": 2,
+    "author": "",
+    "title": "Храм Рамсеса II в Абу-Симбеле",
+    "authorAliases": [],
+    "titleAliases": [
+      "Храм Рамсеса II",
+      "Храм Рамсеса второго в Абу Симбеле"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "2. Храм Рамсеса II в Абу-Симбеле. Фасад",
+    "image": "paintings/2.jpg"
+  },
+  {
+    "id": 3,
+    "author": "Иктин и Калликрат",
+    "title": "Парфенон",
+    "authorAliases": [],
+    "titleAliases": [
+      "Парфенон Афинский акрополь"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "3. Иктин и Калликрат. Парфенон /Афинский акрополь/",
+    "image": "paintings/3.jpg"
+  },
+  {
+    "id": 4,
+    "author": "Поликлет",
+    "title": "Дорифор",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "4. Поликлет. \"Дорифор\"",
+    "image": "paintings/4.jpg"
+  },
+  {
+    "id": 5,
+    "author": "Агесандр, Полидор и Афинодор",
+    "title": "Лаокоон",
+    "authorAliases": [
+      "Агесандр Полидор Афинодор",
+      "Агесандр и Полидор и Афинодор"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "5. Агесандр, Полидор и Афинодор. \"Лаокоон\"",
+    "image": "paintings/5.jpg"
+  },
+  {
+    "id": 6,
+    "author": "",
+    "title": "Портрет императора Каракаллы",
+    "authorAliases": [],
+    "titleAliases": [
+      "Бюст Каракаллы",
+      "Портрет Каракаллы"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "6. Портрет императора Каракалы /бюст/",
+    "image": "paintings/6.jpg"
+  },
+  {
+    "id": 7,
+    "author": "Аполлодор Дамасский",
+    "title": "Пантеон в Риме",
+    "authorAliases": [],
+    "titleAliases": [
+      "Пантеон"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "7. Аполлодор Дамасский. Пантеон в Риме",
+    "image": "paintings/7.jpg"
+  },
+  {
+    "id": 8,
+    "author": "",
+    "title": "Собор Нотр-Дам в Париже",
+    "authorAliases": [],
+    "titleAliases": [
+      "Нотр Дам де Пари",
+      "Собор Парижской Богоматери",
+      "Нотр Дам Париж"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "8. Собор Нотр-Дам в Париже /западный фасад/",
+    "image": "paintings/8.jpg"
+  },
+  {
+    "id": 9,
+    "author": "",
+    "title": "Собор Нотр-Дам в Реймсе",
+    "authorAliases": [],
+    "titleAliases": [
+      "Реймсский собор",
+      "Нотр Дам Реймс"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "9. Собор Нотр-Дам в Реймсе /западный фасад/",
+    "image": "paintings/9.jpg"
+  },
+  {
+    "id": 10,
+    "author": "",
+    "title": "Готический собор в Кёльне",
+    "authorAliases": [],
+    "titleAliases": [
+      "Кельнский собор"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "10. Готический собор в Кёльне",
+    "image": "paintings/10.jpg"
+  },
+  {
+    "id": 11,
+    "author": "",
+    "title": "Готический собор в Милане",
+    "authorAliases": [],
+    "titleAliases": [
+      "Миланский собор",
+      "Дуомо"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "11. Готический собор в Милане",
+    "image": "paintings/11.jpg"
+  },
+  {
+    "id": 12,
+    "author": "Ф. Брунеллески",
+    "title": "Собор Санта-Мария-дель-Фьоре",
+    "authorAliases": [
+      "Филиппо Брунеллески"
+    ],
+    "titleAliases": [
+      "Санта Мария дель Фьоре",
+      "Собор Санта Мария дель Фьоре во Флоренции"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "12. Ф. Брунеллески. Собор Санта Мария дель Фьоре во Флоренции",
+    "image": "paintings/12.jpg"
+  },
+  {
+    "id": 13,
+    "author": "Джотто",
+    "title": "Поцелуй Иуды",
+    "authorAliases": [
+      "Джотто ди Бондоне"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "13. Джотто. \"Поцелуй Иуды\"",
+    "image": "paintings/13.jpg"
+  },
+  {
+    "id": 14,
+    "author": "Донателло",
+    "title": "Давид",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "14. Донателло. \"Давид\"",
+    "image": "paintings/14.jpg"
+  },
+  {
+    "id": 15,
+    "author": "Пьеро делла Франческа",
+    "title": "Бичевание Христа",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "15. Пьеро делла Франческа. \"Бичевание Христа\"",
+    "image": "paintings/15.jpg"
+  },
+  {
+    "id": 16,
+    "author": "С. Боттичелли",
+    "title": "Весна",
+    "authorAliases": [
+      "Сандро Боттичелли"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "16. С. Боттичелли. \"Весна\"",
+    "image": "paintings/16.jpg"
+  },
+  {
+    "id": 17,
+    "author": "Леонардо да Винчи",
+    "title": "Мадонна Литта",
+    "authorAliases": [
+      "Леонардо",
+      "Леонардо да Винчи",
+      "Да Винчи"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "17. Леонардо да Винчи. \"Мадонна Литта\"",
+    "image": "paintings/17.jpg"
+  },
+  {
+    "id": 18,
+    "author": "Леонардо да Винчи",
+    "title": "Мадонна в гроте",
+    "authorAliases": [
+      "Леонардо",
+      "Леонардо да Винчи",
+      "Да Винчи"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "18. Леонардо да Винчи. \"Мадонна в гроте\"",
+    "image": "paintings/18.jpg"
+  },
+  {
+    "id": 19,
+    "author": "Рафаэль",
+    "title": "Сикстинская мадонна",
+    "authorAliases": [
+      "Рафаэль Санти"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "19. Рафаэль. \"Сикстинская мадонна\"",
+    "image": "paintings/19.jpg"
+  },
+  {
+    "id": 20,
+    "author": "Рафаэль",
+    "title": "Афинская школа",
+    "authorAliases": [
+      "Рафаэль Санти"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "20. Рафаэль. \"Афинская школа\" /Фреска/",
+    "image": "paintings/20.jpg"
+  },
+  {
+    "id": 21,
+    "author": "Микеланджело",
+    "title": "Давид",
+    "authorAliases": [
+      "Микеланджело Буонарроти"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "21. Микеланджело. \"Давид\"",
+    "image": "paintings/21.jpg"
+  },
+  {
+    "id": 22,
+    "author": "Микеланджело",
+    "title": "Страшный суд",
+    "authorAliases": [
+      "Микеланджело Буонарроти"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "22. Микеланджело. \"Страшный суд\" /Фреска Сикстинской капеллы",
+    "image": "paintings/22.jpg"
+  },
+  {
+    "id": 23,
+    "author": "Джорджоне",
+    "title": "Сельский концерт",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "23. Джорджоне. \"Сельский концерт\"",
+    "image": "paintings/23.jpg"
+  },
+  {
+    "id": 24,
+    "author": "Джорджоне",
+    "title": "Спящая Венера",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "24. Джорджоне. \"Спящая Венера\"",
+    "image": "paintings/24.jpg"
+  },
+  {
+    "id": 25,
+    "author": "Тициан",
+    "title": "Венера Урбинская",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "25. Тициан. \"Венера Урбинская\"",
+    "image": "paintings/25.jpg"
+  },
+  {
+    "id": 26,
+    "author": "Тициан",
+    "title": "Св. Себастьян",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "26. Тициан. \"Св. Себастьян\"",
+    "image": "paintings/26.jpg"
+  },
+  {
+    "id": 27,
+    "author": "П. Веронезе",
+    "title": "Брак в Кане Галилейской",
+    "authorAliases": [
+      "Паоло Веронезе"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "27. П. Веронезе. \"Брак в Кане Галилейской\"",
+    "image": "paintings/27.jpg"
+  },
+  {
+    "id": 28,
+    "author": "Тинторетто",
+    "title": "Чудо св. Марка",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "28. Тинторетто. \"Чудо св. Марка\"",
+    "image": "paintings/28.jpg"
+  },
+  {
+    "id": 29,
+    "author": "Ян ван Эйк",
+    "title": "Портрет четы Арнольфини",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "29. Ян ван Эйк. \"Портрет четы Арнольфини\"",
+    "image": "paintings/29.jpg"
+  },
+  {
+    "id": 30,
+    "author": "И. Босх",
+    "title": "Сад земных наслаждений",
+    "authorAliases": [
+      "Иероним Босх"
+    ],
+    "titleAliases": [
+      "Сад наслаждений"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "30. И. Босх. \"Сад наслаждений\" /триптих/",
+    "image": "paintings/30.jpg"
+  },
+  {
+    "id": 31,
+    "author": "П. Брейгель Старший",
+    "title": "Слепые",
+    "authorAliases": [
+      "Питер Брейгель Старший"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "31. П. Брейгель Старший. \"Слепые\"",
+    "image": "paintings/31.jpg"
+  },
+  {
+    "id": 32,
+    "author": "А. Дюрер",
+    "title": "Четыре всадника",
+    "authorAliases": [
+      "Альбрехт Дюрер"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "32. А. Дюрер. \"Четыре всадника\" /из серии «Апокалинсис»",
+    "image": "paintings/32.jpg"
+  },
+  {
+    "id": 33,
+    "author": "Л. Бернини",
+    "title": "Давид",
+    "authorAliases": [
+      "Джованни Лоренцо Бернини"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "33. Л. Бернини. \"Давид\"",
+    "image": "paintings/33.jpg"
+  },
+  {
+    "id": 34,
+    "author": "Л. Бернини",
+    "title": "Аполлон и Дафна",
+    "authorAliases": [
+      "Джованни Лоренцо Бернини"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "34. Л. Бернини. \"Аполлон и Дафна\"",
+    "image": "paintings/34.jpg"
+  },
+  {
+    "id": 35,
+    "author": "Караваджо",
+    "title": "Обращение Савла",
+    "authorAliases": [
+      "Микеланджело Меризи да Караваджо"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "35. Караваджо, \"Обращение Савла\"",
+    "image": "paintings/35.jpg"
+  },
+  {
+    "id": 36,
+    "author": "П.П. Рубенс",
+    "title": "Персей и Андромеда",
+    "authorAliases": [
+      "Питер Пауль Рубенс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "36. П.П. Рубенс. \"Персей и Андромеда\"",
+    "image": "paintings/36.jpg"
+  },
+  {
+    "id": 37,
+    "author": "П.П. Рубенс",
+    "title": "Похищение дочерей Левкиппа",
+    "authorAliases": [
+      "Питер Пауль Рубенс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "37. П.П. Рубенс. \"Похищение дочерей Левкиппа\"",
+    "image": "paintings/37.jpg"
+  },
+  {
+    "id": 38,
+    "author": "А. ван Дейк",
+    "title": "Портрет Карла І на охоте",
+    "authorAliases": [
+      "Антонис ван Дейк"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "38. А. ван Дейк. \"Портрет Карла І на охоте\"",
+    "image": "paintings/38.jpg"
+  },
+  {
+    "id": 39,
+    "author": "Я. Иорданс",
+    "title": "Бобовый король",
+    "authorAliases": [
+      "Якоб Иорданс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "39. Я. Иорданс. \"Бобовый король\" /1638, С-Петерб., ГЭ/",
+    "image": "paintings/39.jpg"
+  },
+  {
+    "id": 40,
+    "author": "Ф. Снейдерс",
+    "title": "Фруктовая лавка",
+    "authorAliases": [
+      "Франс Снейдерс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "40. Ф. Снейдерс. \"Фруктовая лавка\"",
+    "image": "paintings/40.jpg"
+  },
+  {
+    "id": 41,
+    "author": "Ф. Хальс",
+    "title": "Стрелковая гильдия св. Георгия",
+    "authorAliases": [
+      "Франс Хальс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "41. Ф. Хальс. \"Стрелковая гильдия св. Георгия\" /1627/",
+    "image": "paintings/41.jpg"
+  },
+  {
+    "id": 42,
+    "author": "Рембрандт",
+    "title": "Ночной дозор",
+    "authorAliases": [
+      "Рембрандт ван Рейн"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "42. Рембрандт. \"Ночной дозор\"",
+    "image": "paintings/42.jpg"
+  },
+  {
+    "id": 43,
+    "author": "Рембрандт",
+    "title": "Даная",
+    "authorAliases": [
+      "Рембрандт ван Рейн"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "43. Рембрандт. \"Даная\"",
+    "image": "paintings/43.jpg"
+  },
+  {
+    "id": 44,
+    "author": "Эль Греко",
+    "title": "Погребение графа Оргаса",
+    "authorAliases": [
+      "Эль Греко"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "44. Эль Греко. \"Погребение графа Оргаса\"",
+    "image": "paintings/44.jpg"
+  },
+  {
+    "id": 45,
+    "author": "Веласкес",
+    "title": "Сдача Бреды",
+    "authorAliases": [
+      "Диего Веласкес"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "45. Веласкес. \"Сдача Бреды\"",
+    "image": "paintings/45.jpg"
+  },
+  {
+    "id": 46,
+    "author": "Веласкес",
+    "title": "Портрет папы Иннокентия X",
+    "authorAliases": [
+      "Диего Веласкес"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "46. Веласкес. \"Портрет папы Иннокентия X\"",
+    "image": "paintings/46.jpg"
+  },
+  {
+    "id": 47,
+    "author": "Н. Пуссен",
+    "title": "Аркадские пастухи",
+    "authorAliases": [
+      "Никола Пуссен"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "47. Н. Пуссен. \"Аркадские пастухи\" /1650, Париж, Лувр/",
+    "image": "paintings/47.jpg"
+  },
+  {
+    "id": 48,
+    "author": "Н. Пуссен",
+    "title": "Танкред и Эрминия",
+    "authorAliases": [
+      "Никола Пуссен"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "48. Н. Пуссен. \"Танкред и Эрминия\"",
+    "image": "paintings/48.jpg"
+  },
+  {
+    "id": 49,
+    "author": "У. Хогарт",
+    "title": "Брачный контракт",
+    "authorAliases": [
+      "Уильям Хогарт"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "49. У. Хогарт. \"Брачный контракт\" из серии «Модный брак»",
+    "image": "paintings/49.jpg"
+  },
+  {
+    "id": 50,
+    "author": "А. Ватто",
+    "title": "Отплытие на остров Киферу",
+    "authorAliases": [
+      "Антуан Ватто"
+    ],
+    "titleAliases": [
+      "Паломничество на остров Киферу"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "50. А. Ватто. \"Отплытие (Паломничество) на остров Киферу\" /1717, Париж, Лувр/",
+    "image": "paintings/50.jpg"
+  },
+  {
+    "id": 51,
+    "author": "А. Ватто",
+    "title": "Вывеска Жерсена",
+    "authorAliases": [
+      "Антуан Ватто"
+    ],
+    "titleAliases": [
+      "Лавка Жерсена"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "51. А. Ватто. \"Вывеска (Лавка) Жерсена\" /ок. 1721, Берлин/",
+    "image": "paintings/51.jpg"
+  },
+  {
+    "id": 52,
+    "author": "Ф. Буше",
+    "title": "Триумф Венеры",
+    "authorAliases": [
+      "Франсуа Буше"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "52. Ф. Буше. \"Триумф Венеры\"",
+    "image": "paintings/52.jpg"
+  },
+  {
+    "id": 53,
+    "author": "Ж.Б.С. Шарден",
+    "title": "Прачка",
+    "authorAliases": [
+      "Жан Батист Симеон Шарден"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "53. Ж.Б.С. Шарден. \"Прачка\"",
+    "image": "paintings/53.jpg"
+  },
+  {
+    "id": 54,
+    "author": "Ж.Б.С. Шарден",
+    "title": "Молитва перед обедом",
+    "authorAliases": [
+      "Жан Батист Симеон Шарден"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "54. Ж.Б.С. Шарден. \"Молитва перед обедом\"",
+    "image": "paintings/54.jpg"
+  },
+  {
+    "id": 55,
+    "author": "Ж.Л. Давид",
+    "title": "Клятва Горациев",
+    "authorAliases": [
+      "Жак Луи Давид"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "55. Ж.Л. Давид. \"Клятва Горациев\"",
+    "image": "paintings/55.jpg"
+  },
+  {
+    "id": 56,
+    "author": "Ж.Л. Давид",
+    "title": "Смерть Марата",
+    "authorAliases": [
+      "Жак Луи Давид"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "56. Ж.Л. Давид. \"Смерть Марата\"",
+    "image": "paintings/56.jpg"
+  },
+  {
+    "id": 57,
+    "author": "Ф. Гойя",
+    "title": "Расстрел мадридских повстанцев в ночь на 3 мая 1808 года",
+    "authorAliases": [
+      "Франсиско Гойя"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "57. Ф. Гойя. \"Расстрел мадридских повстанцев в ночь на 3 мая 1808 года\"",
+    "image": "paintings/57.jpg"
+  },
+  {
+    "id": 58,
+    "author": "У. Тёрнер",
+    "title": "Дождь, пар, скорость",
+    "authorAliases": [
+      "Уильям Тёрнер"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "58. У. Тёрнер. \"Дождь, пар, скорость\"",
+    "image": "paintings/58.jpg"
+  },
+  {
+    "id": 59,
+    "author": "К. Д. Фридрих",
+    "title": "Гибель «Надежды» во льдах",
+    "authorAliases": [
+      "Каспар Давид Фридрих"
+    ],
+    "titleAliases": [
+      "Гибель Надежды",
+      "Гибель Надежды во льдах"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "59. К.Д. Фридрих. \"Гибель «Надежды» во льдах\"",
+    "image": "paintings/59.jpg"
+  },
+  {
+    "id": 60,
+    "author": "Т. Жерико",
+    "title": "Плот «Медузы»",
+    "authorAliases": [
+      "Теодор Жерико"
+    ],
+    "titleAliases": [
+      "Плот Медузы"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "60. Т. Жерико. \"Плет «Медузы»\"",
+    "image": "paintings/60.jpg"
+  },
+  {
+    "id": 61,
+    "author": "Т. Жерико",
+    "title": "Скачки в Эпсоме",
+    "authorAliases": [
+      "Теодор Жерико"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "61. Т. Жерико. \"Скачки в Эпсоме\"",
+    "image": "paintings/61.jpg"
+  },
+  {
+    "id": 62,
+    "author": "Э. Делакруа",
+    "title": "Резня на Хиосе",
+    "authorAliases": [
+      "Эжен Делакруа"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "62. Э. Делакруа. \"Резня на Хиосе\"",
+    "image": "paintings/62.jpg"
+  },
+  {
+    "id": 63,
+    "author": "Э. Делакруа",
+    "title": "Свобода на баррикадах",
+    "authorAliases": [
+      "Эжен Делакруа"
+    ],
+    "titleAliases": [
+      "Свобода, ведущая народ"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "63. Э, Дозвкрув, \"Свобола па баррикалия\" 1°С побода, велушая народ\")",
+    "image": "paintings/63.jpg"
+  },
+  {
+    "id": 64,
+    "author": "Ф. Милле",
+    "title": "Сборщицы колосьев",
+    "authorAliases": [
+      "Жан Франсуа Милле"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "64. Ф. Милле.\"Сборщим колосьей\"",
+    "image": "paintings/64.jpg"
+  },
+  {
+    "id": 65,
+    "author": "Г. Курбе",
+    "title": "Похороны в Орнане",
+    "authorAliases": [
+      "Гюстав Курбе"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "65. Г. Курбе. \"Похороны \" Орнане\"",
+    "image": "paintings/65.jpg"
+  },
+  {
+    "id": 66,
+    "author": "Г. Курбе",
+    "title": "Мастерская художника",
+    "authorAliases": [
+      "Гюстав Курбе"
+    ],
+    "titleAliases": [
+      "Ателье"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "об. Г. Курбе, \"Мастерская куложинка\" (\"Ателье\")",
+    "image": "paintings/66.jpg"
+  },
+  {
+    "id": 67,
+    "author": "Э. Мане",
+    "title": "Завтрак на траве",
+    "authorAliases": [
+      "Эдуард Мане"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "67. Э. Мане. \"Завтрак на тране\"",
+    "image": "paintings/67.jpg"
+  },
+  {
+    "id": 68,
+    "author": "Э. Мане",
+    "title": "Бар в «Фоли-Бержер»",
+    "authorAliases": [
+      "Эдуард Мане"
+    ],
+    "titleAliases": [
+      "Бар Фоли Бержер"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "68. 3. Мане. \"Бар п «Фоли-Бержер»\"",
+    "image": "paintings/68.jpg"
+  },
+  {
+    "id": 69,
+    "author": "К. Моне",
+    "title": "Впечатление. Восход солнца",
+    "authorAliases": [
+      "Клод Моне"
+    ],
+    "titleAliases": [
+      "Впечатление восход солнца"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "69. К. Моне, \"Впечатление Восход солнца\"",
+    "image": "paintings/69.jpg"
+  },
+  {
+    "id": 70,
+    "author": "К. Моне",
+    "title": "Бульвар Капуцинок",
+    "authorAliases": [
+      "Клод Моне"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "70. К. Моно, \"Бульвар Капуциок\" /1873, Г МИИ им. А.Пушкина/",
+    "image": "paintings/70.jpg"
+  },
+  {
+    "id": 71,
+    "author": "О. Ренуар",
+    "title": "Бал в Мулен де ла Галетт",
+    "authorAliases": [
+      "Огюст Ренуар"
+    ],
+    "titleAliases": [
+      "Бал в Мулен де ла Галет"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "71. О. Ренуар. \"Бал и Мулен де-ла Галет\"",
+    "image": "paintings/71.jpg"
+  },
+  {
+    "id": 72,
+    "author": "О. Ренуар",
+    "title": "Завтрак гребцов",
+    "authorAliases": [
+      "Огюст Ренуар"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "72. О. Ренуар. \"Завтрак гребнов\"",
+    "image": "paintings/72.jpg"
+  },
+  {
+    "id": 73,
+    "author": "Э. Дега",
+    "title": "Голубые танцовщицы",
+    "authorAliases": [
+      "Эдгар Дега"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "73.9. Дега. \"Голубые тановтицы\"",
+    "image": "paintings/73.jpg"
+  },
+  {
+    "id": 74,
+    "author": "О. Роден",
+    "title": "Вечная весна",
+    "authorAliases": [
+      "Огюст Роден"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "74. О. Роден. \"Вечная весна»",
+    "image": "paintings/74.jpg"
+  },
+  {
+    "id": 75,
+    "author": "П. Сезанн",
+    "title": "Персики и груши",
+    "authorAliases": [
+      "Поль Сезанн"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "75. 11. Сезани. \"Персики и груши\"",
+    "image": "paintings/75.jpg"
+  },
+  {
+    "id": 76,
+    "author": "П. Сезанн",
+    "title": "Игроки в карты",
+    "authorAliases": [
+      "Поль Сезанн"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "76. П. Сезани. \"Игроки в карты\"",
+    "image": "paintings/76.jpg"
+  },
+  {
+    "id": 77,
+    "author": "В. ван Гог",
+    "title": "Звёздная ночь",
+    "authorAliases": [
+      "Ван Гог",
+      "Винсент ван Гог"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "77. В. ван Гог. \"Звёздная ночь\"",
+    "image": "paintings/77.jpg"
+  },
+  {
+    "id": 78,
+    "author": "В. ван Гог",
+    "title": "Ночное кафе в Арле",
+    "authorAliases": [
+      "Ван Гог",
+      "Винсент ван Гог"
+    ],
+    "titleAliases": [
+      "Ночное кафе"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "78. В. ван Гог. \"Ночтоє кафе в Арле\"",
+    "image": "paintings/78.jpg"
+  },
+  {
+    "id": 79,
+    "author": "П. Гоген",
+    "title": "Женщина, держащая плод",
+    "authorAliases": [
+      "Поль Гоген"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "79. П. Гоген. \"Женщина, держащая под\"",
+    "image": "paintings/79.jpg"
+  },
+  {
+    "id": 80,
+    "author": "А. Матисс",
+    "title": "Радость жизни",
+    "authorAliases": [
+      "Анри Матисс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "80. А. Матисс: \"Радость жизни\"",
+    "image": "paintings/80.jpg"
+  },
+  {
+    "id": 81,
+    "author": "А. Матисс",
+    "title": "Музыка",
+    "authorAliases": [
+      "Анри Матисс"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "81. А. Матисс. \"Музыка\"",
+    "image": "paintings/81.jpg"
+  },
+  {
+    "id": 82,
+    "author": "П. Пикассо",
+    "title": "Авиньонские девицы",
+    "authorAliases": [
+      "Пабло Пикассо"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "82. П. Пикассо. \"Авиньонские девицы\"",
+    "image": "paintings/82.jpg"
+  },
+  {
+    "id": 83,
+    "author": "П. Пикассо",
+    "title": "Герника",
+    "authorAliases": [
+      "Пабло Пикассо"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "83. П. Пикассо. \"Герника\"",
+    "image": "paintings/83.jpg"
+  },
+  {
+    "id": 84,
+    "author": "У. Боччони",
+    "title": "Упругость",
+    "authorAliases": [
+      "Умберто Боччони"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "84. У. Боччони. \"Упругость\" /\"Elasticita\"/",
+    "image": "paintings/84.jpg"
+  },
+  {
+    "id": 85,
+    "author": "Дж. де Кирико",
+    "title": "Великий метафизик",
+    "authorAliases": [
+      "Джорджо де Кирико"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "85. Дис. Кирико. \"Великий метафизик\"",
+    "image": "paintings/85.jpg"
+  },
+  {
+    "id": 86,
+    "author": "С. Дали",
+    "title": "Постоянство памяти",
+    "authorAliases": [
+      "Сальвадор Дали"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "86. С. Дали. \"Постоянство памяти\"",
+    "image": "paintings/86.jpg"
+  },
+  {
+    "id": 87,
+    "author": "С. Дали",
+    "title": "Предчувствие гражданской войны",
+    "authorAliases": [
+      "Сальвадор Дали"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "87. С. Дали. \"Предчувствие гражданской войны\"",
+    "image": "paintings/87.jpg"
+  },
+  {
+    "id": 88,
+    "author": "Р. Магритт",
+    "title": "Кривое зеркало",
+    "authorAliases": [
+      "Рене Магритт"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "88. Р. Магритт. \"Кривое зеркало\"",
+    "image": "paintings/88.jpg"
+  },
+  {
+    "id": 89,
+    "author": "Андрей Рублёв",
+    "title": "Троица",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "89. Андрей Рублёв. «Троица»",
+    "image": "paintings/89.jpg"
+  },
+  {
+    "id": 90,
+    "author": "Барма и Постник",
+    "title": "Храм Василия Блаженного в Москве",
+    "authorAliases": [],
+    "titleAliases": [
+      "Храм Василия Блаженного",
+      "Собор Василия Блаженного",
+      "Покровский собор"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "90. Барма и Постник. Храм Василия Блаженного в Москве",
+    "image": "paintings/90.jpg"
+  },
+  {
+    "id": 91,
+    "author": "Д. Трезини",
+    "title": "Собор св. Петра и Павла",
+    "authorAliases": [],
+    "titleAliases": [
+      "Петропавловский собор",
+      "Собор Святого Петра и Павла"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "91. Д. Трезини. Собор св. Нетра и Павла (Петропавловская крепость) в С-Петерб.",
+    "image": "paintings/91.jpg"
+  },
+  {
+    "id": 92,
+    "author": "А. Матвеев",
+    "title": "Автопортрет с женой",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "92. А. Матвеев. \"Автопортрет с женой\"",
+    "image": "paintings/92.jpg"
+  },
+  {
+    "id": 93,
+    "author": "Б.-К. Растрелли",
+    "title": "Портрет Петра І",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "93. Б.-К. Растрелли. \"Портрет Петра І\" /бюст/",
+    "image": "paintings/93.jpg"
+  },
+  {
+    "id": 94,
+    "author": "И. Аргунов",
+    "title": "Портрет крестьянки в русском костюме",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "94. И. Аргунов. \"Портрет крестьянки в русском костюме\"",
+    "image": "paintings/94.jpg"
+  },
+  {
+    "id": 95,
+    "author": "Ф. Б. Растрелли",
+    "title": "Собор Смольного монастыря в Санкт-Петербурге",
+    "authorAliases": [],
+    "titleAliases": [
+      "Смольный собор",
+      "Собор Смольного монастыря"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "95. Ф.-Б. Растрелли. Собор Смольного монастыря в Санкт-Петербурге",
+    "image": "paintings/95.jpg"
+  },
+  {
+    "id": 96,
+    "author": "Э. Фальконе",
+    "title": "Памятник Петру I в Санкт-Петербурге",
+    "authorAliases": [],
+    "titleAliases": [
+      "Медный всадник",
+      "Памятник Петру I"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "96. Э. Фальконе. Памятник Петру І в Санкт-Петербурге",
+    "image": "paintings/96.jpg"
+  },
+  {
+    "id": 97,
+    "author": "А. Лосенко",
+    "title": "Владимир и Рогнеда",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "97. А. Лосенко, \"Владимир и Рогнеда\"",
+    "image": "paintings/97.jpg"
+  },
+  {
+    "id": 98,
+    "author": "Ф. Рокотов",
+    "title": "Портрет неизвестной в розовом платье",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "98. Ф. Рокотов. \"Портрет неизвестной в розовом платье\"",
+    "image": "paintings/98.jpg"
+  },
+  {
+    "id": 99,
+    "author": "Д. Левицкий",
+    "title": "Портрет А. Ф. Кокоринова",
+    "authorAliases": [
+      "Дмитрий Левицкий"
+    ],
+    "titleAliases": [
+      "Портрет Кокоринова"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "99. Д. Леницкий. \"Портрет А.Ф. Кокоринова\"",
+    "image": "paintings/99.jpg"
+  },
+  {
+    "id": 100,
+    "author": "Д. Левицкий",
+    "title": "Портрет П. А. Демидова",
+    "authorAliases": [
+      "Дмитрий Левицкий"
+    ],
+    "titleAliases": [
+      "Портрет Демидова"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "100. Д. Левицкий. \"Портрет П.А. Демидова\"",
+    "image": "paintings/100.jpg"
+  },
+  {
+    "id": 101,
+    "author": "Д. Левицкий",
+    "title": "Портрет Е. Нелидовой",
+    "authorAliases": [
+      "Дмитрий Левицкий"
+    ],
+    "titleAliases": [
+      "Портрет Нелидовой"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "101. Д. Левинкий. \"Портрет Е. Нелидовой\"",
+    "image": "paintings/101.jpg"
+  },
+  {
+    "id": 102,
+    "author": "Д. Левицкий",
+    "title": "Екатерина II - законодательница в храме богини Правосудия",
+    "authorAliases": [
+      "Дмитрий Левицкий"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "102. Д. Левицкий. \"Екатерина II - законодательница в храме богини Правосудия\"",
+    "image": "paintings/102.jpg"
+  },
+  {
+    "id": 103,
+    "author": "В. Боровиковский",
+    "title": "Портрет М.И. Лопухиной",
+    "authorAliases": [
+      "Владимир Боровиковский"
+    ],
+    "titleAliases": [
+      "Портрет Лопухиной"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "103. В. Боровиковский. \"Портрет М.И. Лопухиной\"",
+    "image": "paintings/103.jpg"
+  },
+  {
+    "id": 104,
+    "author": "В. Боровиковский",
+    "title": "Портрет Екатерины II на прогулке в Царскосельском парке",
+    "authorAliases": [
+      "Владимир Боровиковский"
+    ],
+    "titleAliases": [
+      "Екатерина II на прогулке в Царскосельском парке"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "104. В. Боровиковский. \"Портрет Екатерины І на прогулке в Царскосельском парке\"",
+    "image": "paintings/104.jpg"
+  },
+  {
+    "id": 105,
+    "author": "А. Воронихин",
+    "title": "Казанский собор в Санкт-Петербурге",
+    "authorAliases": [],
+    "titleAliases": [
+      "Казанский собор"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "105. А. Воронихин. Казанский собор в Санкт-Петербурге",
+    "image": "paintings/105.jpg"
+  },
+  {
+    "id": 106,
+    "author": "О. Монферран",
+    "title": "Исаакиевский собор",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "106. О. Монферран. Исаакиевский собор",
+    "image": "paintings/106.jpg"
+  },
+  {
+    "id": 107,
+    "author": "А. Захаров",
+    "title": "Адмиралтейство в Санкт-Петербурге",
+    "authorAliases": [],
+    "titleAliases": [
+      "Адмиралтейство"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "107. А. Захаров. Адмиралтейство в Санкт-Петербурге",
+    "image": "paintings/107.jpg"
+  },
+  {
+    "id": 108,
+    "author": "И. Мартос",
+    "title": "Памятник Минину и Пожарскому в Москве",
+    "authorAliases": [],
+    "titleAliases": [
+      "Памятник Минину и Пожарскому"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "108. И. Мартос. Памятник Минину и Пожарскому в Москве",
+    "image": "paintings/108.jpg"
+  },
+  {
+    "id": 109,
+    "author": "О. Кипренский",
+    "title": "Портрет Е.В. Давыдова",
+    "authorAliases": [
+      "Орест Кипренский"
+    ],
+    "titleAliases": [
+      "Портрет Давыдова"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "109. О. Кипренский. \"Портрет Е.В. Давыдова\"",
+    "image": "paintings/109.jpg"
+  },
+  {
+    "id": 110,
+    "author": "О. Кипренский",
+    "title": "Портрет А.С. Пушкина",
+    "authorAliases": [
+      "Орест Кипренский"
+    ],
+    "titleAliases": [
+      "Портрет Пушкина"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "110. О. Кипренский. \"Портрет А.С. Пушкина\"",
+    "image": "paintings/110.jpg"
+  },
+  {
+    "id": 111,
+    "author": "В. Тропинин",
+    "title": "Портрет А. В. Тропинина",
+    "authorAliases": [
+      "Василий Тропинин"
+    ],
+    "titleAliases": [
+      "Портрет сына художника",
+      "Портрет Тропинина"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "111. В. Тропинин. \"Портрет А.В. Тропинина\" (\"Портрет сына художника\")",
+    "image": "paintings/111.jpg"
+  },
+  {
+    "id": 112,
+    "author": "В. Тропинин",
+    "title": "Кружевница",
+    "authorAliases": [
+      "Василий Тропинин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "112. В. Тропинин. \"Кружевница\"",
+    "image": "paintings/112.jpg"
+  },
+  {
+    "id": 113,
+    "author": "А. Венецианов",
+    "title": "Гумно",
+    "authorAliases": [
+      "Алексей Венецианов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "113. А. Венецианов. \"Гумно\"",
+    "image": "paintings/113.jpg"
+  },
+  {
+    "id": 114,
+    "author": "А. Венецианов",
+    "title": "На пашне. Весна",
+    "authorAliases": [
+      "Алексей Венецианов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "114. А. Венецианов. \"На пашне. Весна\"",
+    "image": "paintings/114.jpg"
+  },
+  {
+    "id": 115,
+    "author": "К. Брюллов",
+    "title": "Последний день Помпеи",
+    "authorAliases": [
+      "Карл Брюллов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "115. К. Брюллов. \"Последний день Помпеи\"",
+    "image": "paintings/115.jpg"
+  },
+  {
+    "id": 116,
+    "author": "К. Брюллов",
+    "title": "Всадница",
+    "authorAliases": [
+      "Карл Брюллов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "116. К. Брюллов. \"Всадница\"",
+    "image": "paintings/116.jpg"
+  },
+  {
+    "id": 117,
+    "author": "А. Иванов",
+    "title": "Явление Христа народу",
+    "authorAliases": [
+      "Александр Иванов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "117. А. Иванов. \"Явление Христа народу\"",
+    "image": "paintings/117.jpg"
+  },
+  {
+    "id": 118,
+    "author": "П. Федотов",
+    "title": "Сватовство майора",
+    "authorAliases": [
+      "Павел Федотов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "118. П. Федотов.\"Сватовство майора\"",
+    "image": "paintings/118.jpg"
+  },
+  {
+    "id": 119,
+    "author": "П. Федотов",
+    "title": "Завтрак аристократа",
+    "authorAliases": [
+      "Павел Федотов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "119. П. Федотов. \"Завтрак аристократа\"",
+    "image": "paintings/119.jpg"
+  },
+  {
+    "id": 120,
+    "author": "В. Перов",
+    "title": "Сельский крестный ход на Пасхе",
+    "authorAliases": [
+      "Василий Перов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "120. В. Перов. \"Сельский крестный ход на Пасхе\"",
+    "image": "paintings/120.jpg"
+  },
+  {
+    "id": 121,
+    "author": "В. Перов",
+    "title": "Приезд гувернантки в купеческий дом",
+    "authorAliases": [
+      "Василий Перов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "121. В. Перов. \"Приезд гувернантки в купеческий дом\"",
+    "image": "paintings/121.jpg"
+  },
+  {
+    "id": 122,
+    "author": "И. Крамской",
+    "title": "Христос в пустыне",
+    "authorAliases": [
+      "Иван Крамской"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "122. И. Крамской. \"Христос в пустыне\"",
+    "image": "paintings/122.jpg"
+  },
+  {
+    "id": 123,
+    "author": "Н. Ге",
+    "title": "Пётр I допрашивает царевича Алексея Петровича в Петергофе",
+    "authorAliases": [
+      "Николай Ге"
+    ],
+    "titleAliases": [
+      "Петр первый допрашивает царевича Алексея Петровича в Петергофе"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "123. Н. Ге. \"Пётр І допращивает царевича Алексея Петровича в Петергофе\"",
+    "image": "paintings/123.jpg"
+  },
+  {
+    "id": 124,
+    "author": "В. Верещагин",
+    "title": "Апофеоз войны",
+    "authorAliases": [
+      "Василий Верещагин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "124. В. Верещагин. \"Апофеоз войны\"",
+    "image": "paintings/124.jpg"
+  },
+  {
+    "id": 125,
+    "author": "А. Саврасов",
+    "title": "Грачи прилетели",
+    "authorAliases": [
+      "Алексей Саврасов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "125. А. Саврасов. \"Грачи прилетели\"",
+    "image": "paintings/125.jpg"
+  },
+  {
+    "id": 126,
+    "author": "И. Шишкин",
+    "title": "Лесные дали",
+    "authorAliases": [
+      "Иван Шишкин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "126. И. Шишкин. \"Лесные дали\"",
+    "image": "paintings/126.jpg"
+  },
+  {
+    "id": 127,
+    "author": "И. Шишкин",
+    "title": "Рожь",
+    "authorAliases": [
+      "Иван Шишкин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "127. И. Шишкин. \"Рожь\"",
+    "image": "paintings/127.jpg"
+  },
+  {
+    "id": 128,
+    "author": "А. Куинджи",
+    "title": "Берёзовая роща",
+    "authorAliases": [
+      "Архип Куинджи"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "128. А. Куинджи. \"Берёзовая роща\"",
+    "image": "paintings/128.jpg"
+  },
+  {
+    "id": 129,
+    "author": "А. Куинджи",
+    "title": "Лунная ночь на Днепре",
+    "authorAliases": [
+      "Архип Куинджи"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "129. А. Куинджи. \"Лунная ночь на Днепре\"",
+    "image": "paintings/129.jpg"
+  },
+  {
+    "id": 130,
+    "author": "В. Поленов",
+    "title": "Московский дворик",
+    "authorAliases": [
+      "Василий Поленов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "130. В. Поленов. \"Московский дворик\"",
+    "image": null
+  },
+  {
+    "id": 131,
+    "author": "И. Левитан",
+    "title": "Вечерний звон",
+    "authorAliases": [
+      "Исаак Левитан"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "131. И. Левитан. \"Вечерний звон\"",
+    "image": null
+  },
+  {
+    "id": 132,
+    "author": "И. Левитан",
+    "title": "Золотая осень",
+    "authorAliases": [
+      "Исаак Левитан"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "132. И. Левитан. \"Золотая осень\"",
+    "image": null
+  },
+  {
+    "id": 133,
+    "author": "И. Левитан",
+    "title": "Над вечным покоем",
+    "authorAliases": [
+      "Исаак Левитан"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "133. И. Левитан. \"Над вечным покоем\"",
+    "image": null
+  },
+  {
+    "id": 134,
+    "author": "И. Репин",
+    "title": "Крестный ход в Курской губернии",
+    "authorAliases": [
+      "Илья Репин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "134. И. Репин. \"Крестный ход в Курской губернии\"",
+    "image": null
+  },
+  {
+    "id": 135,
+    "author": "И. Репин",
+    "title": "Портрет М.П. Мусоргского",
+    "authorAliases": [
+      "Илья Репин"
+    ],
+    "titleAliases": [
+      "Портрет Мусоргского"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "135. И. Репин. \"Портрет М.П. Мусоргского\"",
+    "image": null
+  },
+  {
+    "id": 136,
+    "author": "И. Репин",
+    "title": "Отказ от исповеди",
+    "authorAliases": [
+      "Илья Репин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "136. И. Репин. \"Отказ от исповеди\"",
+    "image": null
+  },
+  {
+    "id": 137,
+    "author": "В. Суриков",
+    "title": "Утро стрелецкой казни",
+    "authorAliases": [
+      "Василий Суриков"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "137. В. Суриков. \"Утро стрелецкой казни\"",
+    "image": null
+  },
+  {
+    "id": 138,
+    "author": "В. Суриков",
+    "title": "Меншиков в Берёзове",
+    "authorAliases": [
+      "Василий Суриков"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "138. В. Суриков.\"Меньшиков в Берёзове\"",
+    "image": null
+  },
+  {
+    "id": 139,
+    "author": "В. Суриков",
+    "title": "Взятие снежного городка",
+    "authorAliases": [
+      "Василий Суриков"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "139. В. Суриков. \"Взятие снежного городка\"",
+    "image": null
+  },
+  {
+    "id": 140,
+    "author": "В. Васнецов",
+    "title": "Богатыри",
+    "authorAliases": [
+      "Виктор Васнецов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "140. В. Васнецов. \"Богатыри\"",
+    "image": null
+  },
+  {
+    "id": 141,
+    "author": "М. Нестеров",
+    "title": "Пустынник",
+    "authorAliases": [
+      "Михаил Нестеров"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "141. М. Нестеров. “Пустынник\"",
+    "image": null
+  },
+  {
+    "id": 142,
+    "author": "М. Нестеров",
+    "title": "Видение отроку Варфоломею",
+    "authorAliases": [
+      "Михаил Нестеров"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "142. М. Нестеров. \"Видение отроку Варфоломею\"",
+    "image": null
+  },
+  {
+    "id": 143,
+    "author": "К. Коровин",
+    "title": "Париж. Бульвар Капуцинок",
+    "authorAliases": [
+      "Константин Коровин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "143. К. Коровин. \"Париж. Бульвар Капуцинок\"",
+    "image": null
+  },
+  {
+    "id": 144,
+    "author": "К. Коровин",
+    "title": "Портрет Ф.И. Шаляпина",
+    "authorAliases": [
+      "Константин Коровин"
+    ],
+    "titleAliases": [
+      "Портрет Шаляпина"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "144. К. Коровин. \"Портрет Ф.И. Шаляпина\"",
+    "image": null
+  },
+  {
+    "id": 145,
+    "author": "В. Серов",
+    "title": "Похищение Европы",
+    "authorAliases": [
+      "Валентин Серов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "145. В. Серов. \"Похищение Европы\"",
+    "image": null
+  },
+  {
+    "id": 146,
+    "author": "В. Серов",
+    "title": "Пётр І",
+    "authorAliases": [
+      "Валентин Серов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "146. В. Серов. \"Пётр І\"",
+    "image": null
+  },
+  {
+    "id": 147,
+    "author": "М. Врубель",
+    "title": "Царевна-Лебедь",
+    "authorAliases": [
+      "Михаил Врубель"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "147. М. Врубель. \"Царевна-Лебедь\"",
+    "image": null
+  },
+  {
+    "id": 148,
+    "author": "М. Врубель",
+    "title": "Пан",
+    "authorAliases": [
+      "Михаил Врубель"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "148. М. Врубель. \"Пан\"",
+    "image": null
+  },
+  {
+    "id": 149,
+    "author": "В. Борисов-Мусатов",
+    "title": "Водоём",
+    "authorAliases": [
+      "Виктор Борисов Мусатов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "149. В. Борисов-Мусатов. \"Водоём\"",
+    "image": null
+  },
+  {
+    "id": 150,
+    "author": "А. Бенуа",
+    "title": "Прогулка короля",
+    "authorAliases": [
+      "Александр Бенуа"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "150. А. Бенуа. \"Прогулка короля\"",
+    "image": null
+  },
+  {
+    "id": 151,
+    "author": "К. Сомов",
+    "title": "Дама в голубом",
+    "authorAliases": [
+      "Константин Сомов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "151. К. Сомов. \"Дама в голубом\"",
+    "image": null
+  },
+  {
+    "id": 152,
+    "author": "М. Добужинский",
+    "title": "Человек в очках",
+    "authorAliases": [
+      "Мстислав Добужинский"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "152. М. Добужинский. \"Человек в очках\"",
+    "image": null
+  },
+  {
+    "id": 153,
+    "author": "Б. Кустодиев",
+    "title": "Портрет Ф.И. Шаляпина",
+    "authorAliases": [
+      "Борис Кустодиев"
+    ],
+    "titleAliases": [
+      "Портрет Шаляпина"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "153. Б. Кустодиев. \"Портрет Ф.И. Шаляпина\"",
+    "image": null
+  },
+  {
+    "id": 154,
+    "author": "И. Грабарь",
+    "title": "Мартовский снег",
+    "authorAliases": [
+      "Игорь Грабарь"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "154. И. Грабарь. \"Мартовский снег\"",
+    "image": null
+  },
+  {
+    "id": 155,
+    "author": "К. Юон",
+    "title": "Мартовское солнце",
+    "authorAliases": [
+      "Константин Юон"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "155. К. Юон. \"Мартовское солнце\"",
+    "image": null
+  },
+  {
+    "id": 156,
+    "author": "Д. Моор",
+    "title": "Ты записался добровольцем?",
+    "authorAliases": [
+      "Дмитрий Моор"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "156. Д. Моор \"Ты записался добровольцем?\"",
+    "image": null
+  },
+  {
+    "id": 157,
+    "author": "А. Рылов",
+    "title": "В голубом просторе",
+    "authorAliases": [
+      "Аркадий Рылов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "157. А. Рылов. \"В голубом просторе\"",
+    "image": null
+  },
+  {
+    "id": 158,
+    "author": "К. Петров-Водкин",
+    "title": "Смерть комиссара",
+    "authorAliases": [
+      "Кузьма Петров Водкин"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "158. К. Петров-Водкин. \"Смерть комиссара\"",
+    "image": null
+  },
+  {
+    "id": 159,
+    "author": "И. Машков",
+    "title": "Снедь московская: хлебы",
+    "authorAliases": [
+      "Илья Машков"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "159. И. Машков. \"Снедь московская: хлебы\"",
+    "image": null
+  },
+  {
+    "id": 160,
+    "author": "Б. Иогансон",
+    "title": "Допрос коммунистов",
+    "authorAliases": [
+      "Борис Иогансон"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "160. Б. Иогансон. \"Допрос коммунистов\"",
+    "image": null
+  },
+  {
+    "id": 161,
+    "author": "М. Нестеров",
+    "title": "Портрет академика И.П. Павлова",
+    "authorAliases": [
+      "Михаил Нестеров"
+    ],
+    "titleAliases": [
+      "Портрет академика Павлова"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "161. М. Нестеров. \"Портрет академика И.П. Павлова\"",
+    "image": null
+  },
+  {
+    "id": 162,
+    "author": "В. Мухина",
+    "title": "Рабочий и колхозница",
+    "authorAliases": [
+      "Вера Мухина"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "162. В. Мухина. \"Рабочий и колхозница\"",
+    "image": null
+  },
+  {
+    "id": 163,
+    "author": "Кукрыниксы",
+    "title": "Потеряла я колечко",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "163. Кукрыниксы. \"Потеряла я колечко...",
+    "image": null
+  },
+  {
+    "id": 164,
+    "author": "А. Пластов",
+    "title": "Фашист пролетел",
+    "authorAliases": [
+      "Аркадий Пластов"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "164. А. Пластов. \"Фашист пролетел\"",
+    "image": null
+  },
+  {
+    "id": 165,
+    "author": "А. Дейнека",
+    "title": "Оборона Севастополя",
+    "authorAliases": [
+      "Александр Дейнека"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "165. А. Дейнека. \"Оборона Севастополя\"",
+    "image": null
+  },
+  {
+    "id": 166,
+    "author": "Е. Вучетич",
+    "title": "Памятник воину-освободителю в Берлине",
+    "authorAliases": [
+      "Евгений Вучетич"
+    ],
+    "titleAliases": [
+      "Воин освободитель",
+      "Памятник воину освободителю"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "166. Е. Вучетич. Памятник воину-освободителю в Берлине",
+    "image": null
+  },
+  {
+    "id": 167,
+    "author": "",
+    "title": "Софийский собор в Полоцке",
+    "authorAliases": [],
+    "titleAliases": [
+      "Полоцкий Софийский собор"
+    ],
+    "authorRequired": false,
+    "note": "",
+    "original": "167. Софийский собор в Полоцке",
+    "image": null
+  },
+  {
+    "id": 168,
+    "author": "",
+    "title": "Мирский замок",
+    "authorAliases": [],
+    "titleAliases": [],
+    "authorRequired": false,
+    "note": "",
+    "original": "168. Мирский замок",
+    "image": null
+  },
+  {
+    "id": 169,
+    "author": "М. Савицкий",
+    "title": "Партизанская мадонна",
+    "authorAliases": [
+      "Михаил Савицкий"
+    ],
+    "titleAliases": [],
+    "authorRequired": true,
+    "note": "",
+    "original": "169. М. Савицкий. \"Партизанская мадонна\"",
+    "image": null
+  },
+  {
+    "id": 170,
+    "author": "А. Кибальников, А. Бембель и др.",
+    "title": "Брестская крепость-герой",
+    "authorAliases": [
+      "Кибальников и Бембель",
+      "Александр Кибальников и Андрей Бембель"
+    ],
+    "titleAliases": [
+      "Брестская крепость",
+      "Мемориальный комплекс Брестская крепость герой"
+    ],
+    "authorRequired": true,
+    "note": "",
+    "original": "170. А. Кибальников, А. Бембель и др. «Брестская крепость-герой»",
+    "image": null
+  }
+]
