@@ -4,6 +4,6 @@ import dynamic from 'next/dynamic';
 // the app, so server defaults cannot overwrite or mismatch saved progress.
 const ArtMemory = dynamic(() => import('../App.jsx'), {
   ssr: false,
-  loading: () => <main className="crash" role="status"><span className="eyebrow">ТВОЯ КОЛЛЕКЦИЯ</span><h1>Артпамять.</h1><p>Открываю твою галерею…</p></main>,
+  loading: () => <main className="crash" role="status"><h1>артблять.</h1></main>,
 });
 export default function ArtMemoryClient() { return <ArtMemory />; }

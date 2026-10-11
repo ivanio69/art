@@ -11,3 +11,4 @@ class ErrorBoundary extends React.Component {
   }
 }
 createRoot(document.getElementById('root')).render(<ErrorBoundary><App /></ErrorBoundary>);
+import './refinements.css';

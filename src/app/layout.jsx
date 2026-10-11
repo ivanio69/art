@@ -1,7 +1,8 @@
 import '../style.css';
+import '../refinements.css';
 export const metadata = {
-  title: 'Артпамять — картины, которые ты помнишь',
-  description: 'Учите названия 170 произведений и их авторов: короткие тренировки, карточки и интервальное повторение.',
+  title: 'артблять — квиз и экзамен по искусству',
+  description: 'Изучай коллекцию, выбирай ответы в квизе и вспоминай автора и название на экзамене.',
   manifest: '/manifest.webmanifest',
   icons: { icon: '/icon.svg' },
 };
