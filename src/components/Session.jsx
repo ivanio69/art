@@ -11,6 +11,7 @@ import { canCorrect } from '../lib/correction.js';
 export default function Session({ session, paintings, progress = {}, examProgress = {}, errorStats = {}, tolerance = 'normal', onReview, onCorrect, onSnapshot, onComplete, onExit, onRestart }) {
   const [index, setIndex] = useState(session.snapshot?.index || 0);
   const [answer, setAnswer] = useState(session.snapshot?.answer || null);
+  const [selectedId, setSelectedId] = useState(session.snapshot?.selectedId ?? null);
   const [written, setWritten] = useState(session.snapshot?.written || { author: '', title: '' });
   const [results, setResults] = useState(session.snapshot?.results || []);
   const [zoom, setZoom] = useState(false);
@@ -35,7 +36,7 @@ export default function Session({ session, paintings, progress = {}, examProgres
   }, [painting, paintings, exam, index, session.snapshot, errorStats]);
   const known = useMemo(() => answerCatalog(paintings), [paintings]);
   useEffect(() => { if (exam && !finished && answer === null) input.current?.focus(); if (answer) nextButton.current?.focus(); }, [index, exam, finished, answer]);
-  useEffect(() => { snapshotCallback.current?.(finished ? null : { index, answer, written, results, optionIds: options.map(p => p.id) }); }, [index, answer, written, results, options, finished]);
+  useEffect(() => { snapshotCallback.current?.(finished ? null : { index, answer, selectedId, written, results, optionIds: options.map(p => p.id) }); }, [index, answer, selectedId, written, results, options, finished]);
   useEffect(() => {
     if (finished && !completed.current) { completed.current = true; completeCallback.current?.(session, results); }
   }, [finished, session, results]);
@@ -55,7 +56,8 @@ export default function Session({ session, paintings, progress = {}, examProgres
     function keydown(event) {
       if (event.repeat || event.altKey || event.ctrlKey || event.metaKey || document.querySelector('dialog[open]') || finished || event.target.closest('input,textarea,select,[contenteditable="true"]')) return;
       if (event.key === 'Enter' && answer) { event.preventDefault(); next(); }
-      else if (!exam && !answer && /^[1-4]$/.test(event.key)) { event.preventDefault(); const option = options[Number(event.key) - 1]; if (option) commit(option.id === painting.id, { selectedId: option.id }); }
+      else if (!exam && !answer && event.key === 'Enter' && selectedId !== null) { event.preventDefault(); commit(selectedId === painting.id, { selectedId }); }
+      else if (!exam && !answer && /^[1-4]$/.test(event.key)) { event.preventDefault(); const option = options[Number(event.key) - 1]; if (option) setSelectedId(option.id); }
     }
     window.addEventListener('keydown', keydown);
     return () => window.removeEventListener('keydown', keydown);
@@ -70,7 +72,7 @@ export default function Session({ session, paintings, progress = {}, examProgres
     if (blind) next(); else setAnswer(result);
   }
   function next() {
-    committed.current = false; setAnswer(null); setWritten({ author: '', title: '' }); setIndex(current => current + 1);
+    committed.current = false; setAnswer(null); setSelectedId(null); setWritten({ author: '', title: '' }); setIndex(current => current + 1);
     window.scrollTo({ top: 0, behavior: 'instant' });
   }
   function submit(event) {
@@ -97,7 +99,7 @@ export default function Session({ session, paintings, progress = {}, examProgres
   return <section className="quiz-card page-enter"><div className="session-top"><button className="text-button" onClick={onExit}><ArrowLeft size={17} />Выйти</button><span>{blind ? 'Без подсказок' : exam ? 'Экзамен' : 'Квиз'} · {index + 1} / {session.queue.length}{seconds !== null && <time className={seconds < 60 ? 'timer urgent' : 'timer'} aria-label="Осталось времени">{Math.floor(seconds / 60)}:{String(seconds % 60).padStart(2, '0')}</time>}</span></div><div className="session-progress"><div style={{ width: `${(index + Number(Boolean(answer))) / session.queue.length * 100}%` }} /></div>
     <div className={`quiz-layout ${exam ? 'exam-layout' : ''}`}><div className="quiz-art"><PaintingImage key={painting.image} painting={painting} onZoom={() => setZoom(true)} /><span>{exam ? 'Напиши автора и название' : 'Что это за картина?'}</span></div>
       {exam ? <div className="exam-answer"><form onSubmit={submit} className="form-stack">{painting.authorRequired !== false && <label>Автор<input ref={input} maxLength={180} disabled={Boolean(answer)} value={written.author} onChange={e => setWritten(current => ({ ...current, author: e.target.value }))} placeholder="Фамилия или полное имя" autoComplete="off" autoCorrect="off" spellCheck={false} /></label>}<label>Название<input ref={painting.authorRequired === false ? input : undefined} maxLength={180} disabled={Boolean(answer)} value={written.title} onChange={e => setWritten(current => ({ ...current, title: e.target.value }))} placeholder="Название картины" autoComplete="off" autoCorrect="off" spellCheck={false} /></label>{!answer && <><button className="button primary full" disabled={!written.title.trim() || (painting.authorRequired !== false && !written.author.trim())}>{blind ? 'Сохранить ответ' : 'Проверить'}<ArrowRight size={17} /></button><button className="text-button" type="button" onClick={() => commit(false)}>Не помню</button></>}</form>{answer && <div className={`exam-feedback ${answer.correct ? 'correct' : 'wrong'}`}><strong>{answer.manual ? 'Засчитано вручную.' : answer.correct ? 'Верно.' : 'Запомним.'}</strong>{answer.title && !answer.manual && <div className="answer-checks">{painting.authorRequired !== false && <span>{answer.author.accepted ? <Check size={15} /> : <X size={15} />}Автор</span>}<span>{answer.title.accepted ? <Check size={15} /> : <X size={15} />}Название</span></div>}<span>{painting.title}</span><small>{painting.author || 'Автор не указан'}</small>{canCorrect(answer) && <button className="text-button manual-correction" onClick={() => setCorrection(answer)}>Мой ответ верный</button>}</div>}</div> :
-        <div className="quiz-answers">{options.map((option, i) => { const isCorrect = option.id === painting.id; const wrong = answer?.selectedId === option.id && !isCorrect; const showCorrect = Boolean(answer) && isCorrect; return <button key={option.id} className={`quiz-option ${showCorrect ? 'correct' : ''} ${wrong ? 'wrong' : ''}`} onClick={() => commit(isCorrect, { selectedId: option.id })} disabled={Boolean(answer)}><i>{i + 1}</i><span><strong>{option.title}</strong><small>{option.author || 'Автор не указан'}</small></span>{showCorrect && <Check size={19} />}{wrong && <X size={19} />}</button>; })}</div>}
+        <div className="quiz-answers">{options.map((option, i) => { const isCorrect = option.id === painting.id; const wrong = answer?.selectedId === option.id && !isCorrect; const showCorrect = Boolean(answer) && isCorrect; return <button key={option.id} className={`quiz-option ${!answer && selectedId === option.id ? 'selected' : ''} ${showCorrect ? 'correct' : ''} ${wrong ? 'wrong' : ''}`} aria-pressed={selectedId === option.id} onClick={() => setSelectedId(option.id)} disabled={Boolean(answer)}><i>{i + 1}</i><span><strong>{option.title}</strong><small>{option.author || 'Автор не указан'}</small></span>{showCorrect && <Check size={19} />}{wrong && <X size={19} />}</button>; })}{!answer && <button className="button primary full" disabled={selectedId === null} onClick={() => commit(selectedId === painting.id, { selectedId })}>Ответить<ArrowRight size={17} /></button>}</div>}
     </div>
     {correctionDialog}
     {zoom && <Modal title="Рассмотреть работу" wide onClose={() => setZoom(false)}><div className="painting-detail"><PaintingImage painting={painting} zoom /></div></Modal>}

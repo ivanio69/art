@@ -1,3 +1,5 @@
+import { learningBatch } from './learning-batches.js';
+
 export const defaultSettings = { count: 10, dailyGoal: 10, tolerance: 'normal', filter: 'all', examMinutes: 0 };
 const record = value => Boolean(value && typeof value === 'object' && !Array.isArray(value));
 const validWritten = w => record(w) && ['author', 'title'].every(k => typeof w[k] === 'string' && w[k].length <= 180);
@@ -11,13 +13,17 @@ export function validSession(session, ids) {
   if (session.blind !== undefined && typeof session.blind !== 'boolean' || session.deadline != null && (!Number.isFinite(session.deadline) || session.deadline < 0) || session.startedAt != null && (!Number.isFinite(session.startedAt) || session.startedAt < 0)) return false;
   if (session.blind && (session.mode !== 'exam' || s?.answer)) return false;
   if (!record(s) || !Number.isInteger(s.index) || s.index < 0 || s.index >= session.queue.length) return false;
-  if (session.mode === 'learn') return ['study', 'recall', 'feedback'].includes(s.phase) && validWritten(s.written) && !session.deadline;
+  if (session.mode === 'learn') {
+    const batch = learningBatch(session.queue, s.index).ids;
+    const order = s.recallOrder;
+    return ['study', 'recall', 'feedback'].includes(s.phase) && validWritten(s.written) && !session.deadline && (order === undefined || Array.isArray(order) && order.length <= 5 && new Set(order).size === order.length && order.every(id => ids.has(id)) && (s.phase === 'study' || order.length === batch.length && order.every(id => batch.includes(id))));
+  }
   if (!Array.isArray(s.results)) return false;
   if (s.results.length !== s.index + Number(Boolean(s.answer)) || !s.results.every((r, i) => validResult(r, ids) && r.id === session.queue[i])) return false;
   if (s.answer && (!validResult(s.answer, ids) || s.answer.id !== session.queue[s.index] || s.answer.correct !== s.results.at(-1).correct)) return false;
   if (s.answer?.title && (!record(s.answer.title) || typeof s.answer.title.accepted !== 'boolean' || !record(s.answer.author) || typeof s.answer.author.accepted !== 'boolean')) return false;
   if (!record(s.written) || !['author', 'title'].every(k => typeof s.written[k] === 'string' && s.written[k].length <= 180)) return false;
-  return session.mode === 'exam' || (Array.isArray(s.optionIds) && s.optionIds.length === 4 && new Set(s.optionIds).size === 4 && s.optionIds.includes(session.queue[s.index]) && s.optionIds.every(id => ids.has(id)) && (!s.answer || s.optionIds.includes(s.answer.selectedId)));
+  return session.mode === 'exam' || (Array.isArray(s.optionIds) && s.optionIds.length === 4 && new Set(s.optionIds).size === 4 && s.optionIds.includes(session.queue[s.index]) && s.optionIds.every(id => ids.has(id)) && (s.selectedId == null || s.optionIds.includes(s.selectedId)) && (!s.answer || s.optionIds.includes(s.answer.selectedId)));
 }
 export function parseBackup(copy, ids) {
   if (!record(copy) || copy.schema !== 'art-memory' || copy.version !== 1 || !validProgress(copy.progress)) throw new Error('Это не корректная копия прогресса.');

@@ -34,3 +34,14 @@ test('Learning sessions preserve phase and draft without implying an exam result
   assert.equal(validSession({...saved,snapshot:{...saved.snapshot,phase:'invalid'}},ids),false);
   assert.equal(validSession({...saved,deadline:100},ids),false);
 });
+test('Shuffled learning order and unconfirmed quiz selections survive backups', () => {
+  const lesson = { mode: 'learn', queue: [1, 2, 3, 4], snapshot: { index: 1, phase: 'recall', recallOrder: [4, 2, 1, 3], written: { author: '', title: 'Черновик' } } };
+  assert.equal(validSession(lesson, ids), true);
+  assert.equal(validSession({ ...lesson, snapshot: { ...lesson.snapshot, recallOrder: [1, 1, 3, 4] } }, ids), false);
+  assert.equal(validSession({ ...lesson, snapshot: { ...lesson.snapshot, recallOrder: [1, 2] } }, ids), false);
+  const quiz = { ...saved, snapshot: { ...saved.snapshot, answer: null, selectedId: 3, results: [] } };
+  assert.equal(validSession(quiz, ids), true);
+  assert.equal(validSession({ ...quiz, snapshot: { ...quiz.snapshot, selectedId: 99 } }, ids), false);
+  const backup = { schema: 'art-memory', version: 1, progress: {}, activity: {}, savedSession: quiz };
+  assert.deepEqual(parseBackup(backup, ids).savedSession, quiz);
+});
