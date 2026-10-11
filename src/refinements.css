@@ -38,3 +38,6 @@
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 }
+.resume-button { margin-bottom: 22px; background: #e6edda; color: #4d603b; }
+.painting-detail .button-row { margin-bottom: 16px; }
+.painting-detail [aria-pressed="true"] { background: #e7efdc; border-color: #91a775; color: #526941; }

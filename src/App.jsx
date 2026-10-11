@@ -1,6 +1,6 @@
 'use client';
-import { useEffect, useMemo, useState } from 'react';
-import { ArrowRight, Download, Flame, Grid2X2, Play, Search, Settings2, Type } from 'lucide-react';
+import { useEffect, useMemo, useRef, useState } from 'react';
+import { ArrowRight, Download, Flame, Grid2X2, Play, Search, Settings2, Type, Heart, Bookmark, Upload } from 'lucide-react';
 import collection from './lib/collection.json';
 import imageManifest from './lib/images.json';
 import { localDay, makeQueue, ready, review } from './lib/learning.js';
@@ -9,24 +9,28 @@ import { normalize } from './lib/matching.js';
 import PaintingImage from './components/PaintingImage.jsx';
 import Modal from './components/Modal.jsx';
 import Session from './components/Session.jsx';
+import { defaultSettings, parseBackup, validSession } from './lib/user-data.js';
 
-const defaults = { count: 10, dailyGoal: 10, tolerance: 'normal', filter: 'all' };
+const defaults = defaultSettings;
 function initialData() {
   try {
     const stored = JSON.parse(localStorage.getItem(STORAGE_KEY));
     if (stored?.version === 1 && stored.progress && !Array.isArray(stored.progress)) {
       const settings = { ...defaults, ...stored.settings };
       if (![10, 20, 30, 'all'].includes(settings.count)) settings.count = 10;
-      if (!['all', 'smart', 'mistakes', 'new'].includes(settings.filter)) settings.filter = 'all';
-      return { ...stored, settings };
+      if (!['all', 'smart', 'mistakes', 'new', 'favorites', 'difficult'].includes(settings.filter)) settings.filter = 'all';
+      return { ...stored, settings, quizProgress: stored.quizProgress || stored.progress, examProgress: stored.examProgress || {}, marks: stored.marks || {} };
     }
   } catch {}
-  return { progress: {}, activity: {}, settings: defaults };
+  return { progress: {}, quizProgress: {}, examProgress: {}, marks: {}, activity: {}, settings: defaults };
 }
 
 export default function App() {
   const [data, setData] = useState(initialData);
   const [session, setSession] = useState(null);
+  const [collectionFilter, setCollectionFilter] = useState('all');
+  const [pendingRestore, setPendingRestore] = useState(null);
+  const restoreInput = useRef(null);
   const [page, setPage] = useState('home');
   const [modal, setModal] = useState(null);
   const [viewing, setViewing] = useState(null);
@@ -38,8 +42,11 @@ export default function App() {
   const gallery = useMemo(() => collection.map(p => ({ ...p, image: p.image?.startsWith('data:') ? p.image : imageManifest[p.id] || p.image })), []);
   const paintings = useMemo(() => gallery.filter(ready), [gallery]);
   const authors = useMemo(() => [...new Set(gallery.map(p => p.author).filter(Boolean))].sort((a, b) => a.localeCompare(b, 'ru')), [gallery]);
-  const filtered = gallery.filter(p => (!query || normalize(`${p.id} ${p.title} ${p.author}`).includes(normalize(query))) && (!author || p.author === author) && (!onlyImages || p.image));
-  const mastered = paintings.filter(p => (data.progress[p.id]?.streak || 0) >= 3);
+  const ids = useMemo(() => new Set(gallery.map(p => p.id)), [gallery]);
+  const resumable = validSession(data.savedSession, ids) && data.savedSession.queue.every(id => paintings.some(p => p.id === id));
+  const filtered = gallery.filter(p => (!query || normalize(`${p.id} ${p.title} ${p.author}`).includes(normalize(query))) && (!author || p.author === author) && (!onlyImages || p.image) && (collectionFilter === 'all' || data.marks[p.id]?.[collectionFilter]));
+  const quizMastered = paintings.filter(p => (data.quizProgress[p.id]?.streak || 0) >= 3);
+  const mastered = paintings.filter(p => (data.examProgress[p.id]?.streak || 0) >= 3);
   const today = data.activity?.[localDay()] || { attempts: 0 };
   const percent = paintings.length ? Math.round(mastered.length / paintings.length * 100) : 0;
   useEffect(() => {
@@ -50,33 +57,43 @@ export default function App() {
   useEffect(() => { window.scrollTo({ top: 0, behavior: 'instant' }); }, [page, session?.key]);
   function startSession(mode = 'quiz', queueOverride) {
     const count = data.settings.count === 'all' ? paintings.length : data.settings.count;
-    const queue = queueOverride || makeQueue(paintings, data.progress, data.settings.filter, count);
+    const queue = queueOverride || makeQueue(data.settings.filter === 'difficult' ? paintings.filter(p => data.marks[p.id]?.difficult) : paintings.map(p => ({ ...p, favorite: data.marks[p.id]?.favorite })), mode === 'exam' ? data.examProgress : data.quizProgress, data.settings.filter === 'difficult' ? 'all' : data.settings.filter, count);
     if (!queue.length) { setToast(data.settings.filter === 'mistakes' ? 'Ошибок для повторения пока нет.' : 'Подборка закончилась. Выбери «Все картины» в настройках.'); return; }
-    setSession({ key: Date.now(), queue, mode }); setViewing(null);
+    const nextSession = { key: Date.now(), queue, mode };
+    setSession(nextSession); setData(current => ({ ...current, savedSession: null })); setViewing(null);
   }
-  function recordReview(id, correct) {
+  function recordReview(id, correct, mode) {
     const day = localDay();
-    setData(current => ({ ...current, progress: { ...current.progress, [id]: review(current.progress[id], correct) }, activity: { ...current.activity, [day]: { attempts: (current.activity?.[day]?.attempts || 0) + 1, correct: (current.activity?.[day]?.correct || 0) + Number(correct) } } }));
+    setData(current => ({ ...current, progress: { ...current.progress, [id]: review(current.progress[id], correct) }, [mode === 'exam' ? 'examProgress' : 'quizProgress']: { ...current[mode === 'exam' ? 'examProgress' : 'quizProgress'], [id]: review(current[mode === 'exam' ? 'examProgress' : 'quizProgress'][id], correct) }, activity: { ...current.activity, [day]: { attempts: (current.activity?.[day]?.attempts || 0) + 1, correct: (current.activity?.[day]?.correct || 0) + Number(correct) } } }));
   }
   function setting(key, value) { setData(current => ({ ...current, settings: { ...current.settings, [key]: value } })); }
   function backup() { downloadJson({ ...data, version: 1, schema: 'art-memory', savedAt: new Date().toISOString() }, `art-progress-${localDay()}.json`); }
+  function toggleMark(id, key) { setData(current => ({ ...current, marks: { ...current.marks, [id]: { ...current.marks[id], [key]: !current.marks[id]?.[key] } } })); }
+  function snapshot(value) { setData(current => ({ ...current, savedSession: value ? { ...session, snapshot: value } : null })); }
+  async function restoreFile(event) {
+    const file = event.target.files[0]; event.target.value = ''; if (!file) return;
+    try { if (file.size > 5 * 1024 * 1024) throw new Error('Копия слишком большая.'); setPendingRestore(parseBackup(JSON.parse(await file.text()), ids)); setModal('restore'); } catch (error) { setToast(error.message); }
+  }
   const brand = <button className="brand" onClick={() => { setPage('home'); setSession(null); }} aria-label="артблять — главная"><span className="brand-icon"><Grid2X2 size={19} /></span><span>артблять<span className="brand-period">.</span></span></button>;
   return <div className={session ? 'quiz-shell' : 'app-shell simple-home'}>
     <header className={session ? 'quiz-header' : 'simple-header'}>{brand}<div className="header-actions">{!session && <button className={`header-link ${page === 'gallery' ? 'active' : ''}`} onClick={() => setPage(page === 'gallery' ? 'home' : 'gallery')}>Галерея</button>}<span className="daily-status"><Flame size={16} />{today.attempts} / {data.settings.dailyGoal}</span><button className="icon-button" aria-label="Настройки" onClick={() => setModal('settings')}><Settings2 size={18} /></button></div></header>
     {storageError && <div className="save-warning" role="alert">{storageError}<button className="text-button" onClick={backup}>Скачать копию</button></div>}
     <main className={session ? 'quiz-main' : 'landing'}>
-      {session ? <Session key={session.key} session={session} paintings={paintings} tolerance={data.settings.tolerance} onReview={recordReview} onExit={() => setSession(null)} onRestart={(queue, mode) => startSession(mode, queue)} /> : page === 'gallery' ?
+      {session ? <Session key={session.key} session={session} paintings={paintings} tolerance={data.settings.tolerance} onReview={recordReview} onSnapshot={snapshot} onExit={() => setSession(null)} onRestart={(queue, mode) => startSession(mode, queue)} /> : page === 'gallery' ?
         <section className="gallery-page page-enter"><div className="gallery-heading"><div><h1>Галерея.</h1><p>{paintings.length} изображений · {gallery.length} работ</p></div></div>
           <div className="catalog-controls"><label className="search-box"><Search size={18} /><span className="sr-only">Поиск по коллекции</span><input value={query} onChange={e => setQuery(e.target.value)} placeholder="Название, автор или номер" /></label><select className="author-select" aria-label="Автор" value={author} onChange={e => setAuthor(e.target.value)}><option value="">Все авторы</option>{authors.map(a => <option key={a}>{a}</option>)}</select><label className="image-filter"><input type="checkbox" checked={onlyImages} onChange={e => setOnlyImages(e.target.checked)} />С изображением</label></div>
+          <div className="filter-row">{[['all', 'Все'], ['favorite', 'Избранное'], ['difficult', 'Сложные']].map(([value, label]) => <button key={value} className={collectionFilter === value ? 'selected' : ''} onClick={() => setCollectionFilter(value)}>{label}</button>)}</div>
           <div className="gallery-grid">{filtered.map(p => <button className="gallery-card" key={p.id} onClick={() => setViewing(p)} aria-label={`Открыть: ${p.title}`}><PaintingImage painting={p} reveal /><div><small>№{p.id}</small><strong>{p.title}</strong><span>{p.author || '—'}</span></div></button>)}</div>
-          {!filtered.length && <div className="empty-state">Ничего не найдено.<button className="text-button" onClick={() => { setQuery(''); setAuthor(''); setOnlyImages(false); }}>Сбросить фильтры</button></div>}
+          {!filtered.length && <div className="empty-state">Ничего не найдено.<button className="text-button" onClick={() => { setQuery(''); setAuthor(''); setOnlyImages(false); setCollectionFilter('all'); }}>Сбросить фильтры</button></div>}
         </section> :
-        <><section className="landing-hero page-enter"><span className="pulse-dot" /><h1>Смотри.<br /><em>Узнавай.</em></h1><p>Квиз — четыре варианта. Экзамен — автор и название.</p><div className="hero-actions"><button className="button primary hero-button" onClick={() => startSession('quiz')}><Play size={18} />Квиз<ArrowRight size={18} /></button><button className="button secondary hero-button" onClick={() => startSession('exam')}><Type size={18} />Экзамен</button></div><button className="text-button session-settings" onClick={() => setModal('settings')}>{data.settings.count === 'all' ? 'Вся подборка' : `${data.settings.count} картин`} · {({ all: 'все работы', smart: 'умная подборка', mistakes: 'ошибки', new: 'новые' })[data.settings.filter]}<Settings2 size={14} /></button></section>
+        <><section className="landing-hero page-enter">{resumable && <button className="button resume-button" onClick={() => setSession({ ...data.savedSession, key: Date.now() })}>Продолжить {data.savedSession.mode === 'exam' ? 'экзамен' : 'квиз'} · {data.savedSession.snapshot.index + 1}/{data.savedSession.queue.length}<ArrowRight size={17} /></button>}<span className="pulse-dot" /><h1>Смотри.<br /><em>Узнавай.</em></h1><p>Квиз — четыре варианта. Экзамен — автор и название.</p><div className="hero-actions"><button className="button primary hero-button" onClick={() => startSession('quiz')}><Play size={18} />Квиз<ArrowRight size={18} /></button><button className="button secondary hero-button" onClick={() => startSession('exam')}><Type size={18} />Экзамен</button></div><button className="text-button session-settings" onClick={() => setModal('settings')}>{data.settings.count === 'all' ? 'Вся подборка' : `${data.settings.count} картин`} · {({ all: 'все работы', smart: 'умная подборка', mistakes: 'ошибки', new: 'новые', favorites: 'избранное', difficult: 'сложные' })[data.settings.filter]}<Settings2 size={14} /></button></section>
           <section className="landing-art page-enter" aria-label="Картина из коллекции"><div className="floating-frame"><PaintingImage painting={paintings.find(p => p.id === 77) || paintings[0]} reveal /></div><span className="orbit orbit-one" /><span className="orbit orbit-two" /></section>
-          <section className="quiet-progress page-enter"><div><span>Запомнено</span><strong>{percent}%</strong></div><div className="progress-track"><div style={{ width: `${percent}%` }} /></div><span>{mastered.length} из {paintings.length}</span></section></>}
+          <section className="quiet-progress page-enter"><div><span>Помню на экзамене</span><strong>{percent}%</strong></div><div className="progress-track"><div style={{ width: `${percent}%` }} /></div><span>{mastered.length} из {paintings.length}</span></section><section className="quiet-progress"><div><span>Узнаю в квизе</span><strong>{paintings.length ? Math.round(quizMastered.length / paintings.length * 100) : 0}%</strong></div><div className="progress-track"><div style={{ width: `${paintings.length ? quizMastered.length / paintings.length * 100 : 0}%` }} /></div><span>{quizMastered.length} из {paintings.length}</span></section></>}
     </main>
-    {modal === 'settings' && <Modal title="Практика" onClose={() => setModal(null)}><div className="form-stack"><label>Количество картин<select value={data.settings.count} onChange={e => setting('count', e.target.value === 'all' ? 'all' : Number(e.target.value))}>{[10, 20, 30].map(n => <option key={n} value={n}>{n}</option>)}<option value="all">Вся подборка</option></select></label><label>Подборка<select value={data.settings.filter} onChange={e => setting('filter', e.target.value)}><option value="all">Все картины</option><option value="smart">Умная подборка</option><option value="mistakes">Ошибки</option><option value="new">Новые</option></select></label><label>Проверка экзамена<select value={data.settings.tolerance} onChange={e => setting('tolerance', e.target.value)}><option value="normal">Небольшие опечатки допустимы</option><option value="strict">Точное совпадение</option><option value="soft">Мягкая проверка</option></select></label><label>Цель на день<select value={data.settings.dailyGoal} onChange={e => setting('dailyGoal', Number(e.target.value))}>{[5, 10, 20, 30].map(n => <option key={n}>{n}</option>)}</select></label><button className="text-button" onClick={backup}><Download size={16} />Скачать прогресс</button><button className="button primary" onClick={() => setModal(null)}>Готово</button></div></Modal>}
-    {viewing && <Modal title={viewing.title} onClose={() => setViewing(null)} wide><div className="painting-detail"><PaintingImage painting={viewing} reveal /><p>{viewing.author || 'Автор не указан'}</p>{ready(viewing) && <div className="button-row centered"><button className="button secondary" onClick={() => startSession('quiz', [viewing.id])}>Квиз</button><button className="button primary" onClick={() => startSession('exam', [viewing.id])}>Вспомнить на экзамене</button></div>}</div></Modal>}
+    {modal === 'settings' && <Modal title="Практика" onClose={() => setModal(null)}><div className="form-stack"><label>Количество картин<select value={data.settings.count} onChange={e => setting('count', e.target.value === 'all' ? 'all' : Number(e.target.value))}>{[10, 20, 30].map(n => <option key={n} value={n}>{n}</option>)}<option value="all">Вся подборка</option></select></label><label>Подборка<select value={data.settings.filter} onChange={e => setting('filter', e.target.value)}><option value="all">Все картины</option><option value="smart">Умная подборка</option><option value="mistakes">Ошибки</option><option value="new">Новые</option><option value="favorites">Избранное</option><option value="difficult">Сложные</option></select></label><label>Проверка экзамена<select value={data.settings.tolerance} onChange={e => setting('tolerance', e.target.value)}><option value="normal">Небольшие опечатки допустимы</option><option value="strict">Точное совпадение</option><option value="soft">Мягкая проверка</option></select></label><label>Цель на день<select value={data.settings.dailyGoal} onChange={e => setting('dailyGoal', Number(e.target.value))}>{[5, 10, 20, 30].map(n => <option key={n}>{n}</option>)}</select></label><button className="text-button" onClick={backup}><Download size={16} />Скачать прогресс</button><button className="text-button" onClick={() => restoreInput.current?.click()}><Upload size={16} />Восстановить из копии</button><button className="button primary" onClick={() => setModal(null)}>Готово</button></div></Modal>}
+    {viewing && <Modal title={viewing.title} onClose={() => setViewing(null)} wide><div className="painting-detail"><PaintingImage painting={viewing} reveal /><p>{viewing.author || 'Автор не указан'}</p><div className="button-row centered"><button className="button secondary" aria-pressed={Boolean(data.marks[viewing.id]?.favorite)} onClick={() => toggleMark(viewing.id, 'favorite')}><Heart size={17} fill={data.marks[viewing.id]?.favorite ? 'currentColor' : 'none'} />Избранное</button><button className="button secondary" aria-pressed={Boolean(data.marks[viewing.id]?.difficult)} onClick={() => toggleMark(viewing.id, 'difficult')}><Bookmark size={17} fill={data.marks[viewing.id]?.difficult ? 'currentColor' : 'none'} />Сложная</button></div>{ready(viewing) && <div className="button-row centered"><button className="button secondary" onClick={() => startSession('quiz', [viewing.id])}>Квиз</button><button className="button primary" onClick={() => startSession('exam', [viewing.id])}>Вспомнить на экзамене</button></div>}</div></Modal>}
+    <input ref={restoreInput} type="file" accept=".json,application/json" className="sr-only" tabIndex={-1} aria-label="Копия прогресса" onChange={restoreFile} />
+    {modal === 'restore' && pendingRestore && <Modal title="Восстановить прогресс?" onClose={() => { setModal('settings'); setPendingRestore(null); }}><p>Копия содержит {Object.keys(pendingRestore.progress).length} изученных работ. Она заменит текущий прогресс и настройки в этом браузере.</p><div className="button-row"><button className="button secondary" onClick={() => { setPendingRestore(null); setModal('settings'); }}>Отмена</button><button className="button primary" onClick={() => { backup(); setData(current => ({ ...current, ...pendingRestore })); setSession(null); setPendingRestore(null); setModal(null); setToast('Прогресс восстановлен. Предыдущая версия скачана.'); }}>Восстановить</button></div></Modal>}
     {toast && <div className="toast" role="status">{toast}</div>}
   </div>;
 }
