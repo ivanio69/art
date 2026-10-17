@@ -1,7 +1,8 @@
 import { learningBatch } from './learning-batches.js';
 import { quizFields } from './quiz.js';
+import { validStudyFilters } from './study-groups.js';
 
-export const defaultSettings = { count: 10, dailyGoal: 10, tolerance: 'normal', filter: 'all', examMinutes: 0, quizField: 'both' };
+export const defaultSettings = { count: 10, dailyGoal: 10, tolerance: 'normal', filter: 'all', examMinutes: 0, quizField: 'both', studyAuthor: '', studyEpoch: '' };
 const record = value => Boolean(value && typeof value === 'object' && !Array.isArray(value));
 const validWritten = w => record(w) && ['author', 'title'].every(k => typeof w[k] === 'string' && w[k].length <= 180);
 const validResult = (r, ids) => record(r) && ids.has(r.id) && typeof r.correct === 'boolean' && (r.manual === undefined || typeof r.manual === 'boolean' && (!r.manual || r.correct)) && (!r.written || validWritten(r.written)) && ((!r.author && !r.title) || record(r.author) && typeof r.author.accepted === 'boolean' && record(r.title) && typeof r.title.accepted === 'boolean') && (!r.selectedId || ids.has(r.selectedId)) && (!r.before || record(r.before) && ['overall', 'exam'].every(k => r.before[k] === null || validProgress({ [r.id]: r.before[k] })) && Number.isFinite(r.reviewedAt) && r.reviewedAt >= 0 && /^\d{4}-\d{2}-\d{2}$/.test(r.reviewedDay));
@@ -12,6 +13,7 @@ export function validSession(session, ids) {
   if (!record(session) || !['quiz', 'exam', 'learn'].includes(session.mode) || !Array.isArray(session.queue) || !session.queue.length || session.queue.length > 1000 || !session.queue.every(id => ids.has(id)) || new Set(session.queue).size !== session.queue.length) return false;
   const s = session.snapshot;
   if (session.quizField !== undefined && !Object.hasOwn(quizFields, session.quizField)) return false;
+  if (session.studyFilters !== undefined && !validStudyFilters(session.studyFilters)) return false;
   if (session.blind !== undefined && typeof session.blind !== 'boolean' || session.deadline != null && (!Number.isFinite(session.deadline) || session.deadline < 0) || session.startedAt != null && (!Number.isFinite(session.startedAt) || session.startedAt < 0)) return false;
   if (session.blind && (session.mode !== 'exam' || s?.answer)) return false;
   if (!record(s) || !Number.isInteger(s.index) || s.index < 0 || s.index >= session.queue.length) return false;
@@ -31,6 +33,7 @@ export function parseBackup(copy, ids) {
   if (!record(copy) || copy.schema !== 'art-memory' || copy.version !== 1 || !validProgress(copy.progress)) throw new Error('Это не корректная копия прогресса.');
   if (copy.quizProgress && !validProgress(copy.quizProgress) || copy.examProgress && !validProgress(copy.examProgress)) throw new Error('В копии повреждён прогресс режимов.');
   const settings = { ...defaultSettings, ...copy.settings };
+  if (!validStudyFilters({ author: settings.studyAuthor, epoch: settings.studyEpoch })) throw new Error('В копии некорректная подборка для изучения.');
   if (!Object.hasOwn(quizFields, settings.quizField)) throw new Error('В копии некорректный режим квиза.');
   if (![10, 20, 30, 'all'].includes(settings.count) || ![5, 10, 20, 30].includes(settings.dailyGoal) || ![0, 5, 10, 20, 30, 60].includes(settings.examMinutes) || !['normal', 'strict', 'soft'].includes(settings.tolerance) || !['all', 'smart', 'mistakes', 'new', 'favorites', 'difficult'].includes(settings.filter)) throw new Error('В копии некорректные настройки.');
   if (!record(copy.activity) || !Object.entries(copy.activity).every(([day, a]) => /^\d{4}-\d{2}-\d{2}$/.test(day) && record(a) && Number.isFinite(a.attempts) && a.attempts >= 0 && Number.isFinite(a.correct) && a.correct >= 0 && a.correct <= a.attempts)) throw new Error('В копии повреждена история занятий.');

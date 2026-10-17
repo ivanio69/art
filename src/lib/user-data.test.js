@@ -1,7 +1,22 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import { parseBackup, validSession } from './user-data.js';
+import { studyTitle } from './study-groups.js';
 const ids = new Set([1, 2, 3, 4]);
+test('Study selection and lesson topic round-trip without changing old backups', () => {
+  const backup = { schema: 'art-memory', version: 1, progress: {}, activity: {} };
+  const legacy = parseBackup(backup, ids);
+  assert.equal(legacy.settings.studyAuthor, '');
+  assert.equal(legacy.settings.studyEpoch, '');
+  const session = { mode: 'learn', queue: [1, 2], studyFilters: { author: '__unknown__', epoch: '1-2' }, snapshot: { index: 0, phase: 'study', written: { author: '', title: '' }, recallOrder: [1, 2] } };
+  const copy = { ...backup, settings: { studyAuthor: '__unknown__', studyEpoch: '1-2' }, savedSession: session };
+  const restored = parseBackup(copy, ids);
+  assert.deepEqual(restored.savedSession, session);
+  assert.equal(restored.settings.studyEpoch, '1-2');
+  assert.equal(studyTitle(restored.savedSession.studyFilters), 'Искусство Древнего мира · Автор не указан');
+  assert.equal(validSession({ ...session, studyFilters: { author: '', epoch: 'bad' } }, ids), false);
+  assert.throws(() => parseBackup({ ...copy, settings: { studyEpoch: 'bad' } }, ids));
+});
 const saved = { mode: 'quiz', queue: [1, 2], snapshot: { index: 0, answer: { id: 1, correct: true, selectedId: 1 }, written: { author: '', title: '' }, results: [{ id: 1, correct: true }], optionIds: [1, 2, 3, 4] } };
 test('Saved answered question resumes without requiring another review', () => {
   assert.equal(validSession(saved, ids), true);
